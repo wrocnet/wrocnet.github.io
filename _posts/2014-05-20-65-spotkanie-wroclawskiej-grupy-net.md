@@ -5,7 +5,7 @@ meetupno: 65
 ---
 
 #### Wprowadzenie do zarządzania pamięcią w .NET - [Remigiusz Cieślak](emailto:remigiusz.cieslak@gmail.com)
-* Prezentacja: wkrótce
+* Prezentacja+przykłady: [dotnetmemorymanagement.7z](https://raw.githubusercontent.com/wrocnet/wrocnet.github.io/master/_assets/dotnetmemorymanagement.7z) 
 * Wideo: https://www.youtube.com/watch?v=pOBsjD6S8TY
 
 
