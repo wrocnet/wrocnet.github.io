@@ -1,13 +1,9 @@
 ---
 layout: meetup
-title: 62. spotkanie Wrocławskiej Grupy .NET
-meetupno: 62
+title: 63. spotkanie Wrocławskiej Grupy .NET
+meetupno: 63
 ---
 
-#### Randka z Nancy - [Maciej Aniserowicz](http://maciejaniserowicz.com)
-* Prezentacja: [Nancy.pdf](https://raw.githubusercontent.com/wrocnet/wrocnet.github.io/master/_assets/maniserowicz-nancy.pdf)
-* Wideo: [https://www.youtube.com/watch?v=RcIUzb5m0FU](https://www.youtube.com/watch?v=RcIUzb5m0FU)
-
-#### Jakub Gutkowski: 'Tak' + 'Tak' == false?  - [Jakub Gutkowski](http://blog.gutek.pl)
-* Prezentacja: [Tak Tak.pptx](https://raw.githubusercontent.com/wrocnet/wrocnet.github.io/master/_assets/tak%20tak.pptx)
-* Wideo: [https://www.youtube.com/watch?v=37igw8l52Ho](https://www.youtube.com/watch?v=37igw8l52Ho)
+#### Programowanie w Windows Phone - niby .Net a jednak... - [Basia Fusińska](http://barbarafusinska.com)
+* Prezentacja: [WindowsPhone.pptx](https://raw.githubusercontent.com/wrocnet/wrocnet.github.io/master/_assets/WindowsPhone.pptx)
+* Wideo: [https://www.youtube.com/watch?v=W04Qc8hdjY4](https://www.youtube.com/watch?v=W04Qc8hdjY4)
