@@ -5,5 +5,5 @@ meetupno: 48
 ---
 
 #### Fody - [Mirosław Pragłowski](https://twitter.com/mpraglowski)
-* Prezentacja: [Boss? Beer? Buzzword? What is **B** in **BDD**?]({{BASE_PATH}}/assets/bdd.pdf)
+* Prezentacja: [Boss? Beer? Buzzword? What is **B** in **BDD**?](http://praglowski.com/presentations/bdd/)
 * Wideo: [https://www.youtube.com/watch?v=FQE8EgCTTpo](https://www.youtube.com/watch?v=FQE8EgCTTpo)
