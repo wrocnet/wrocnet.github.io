@@ -5,7 +5,7 @@ meetupno: 66
 ---
 
 #### Focus on Architecture: Does great power come with great responsibility? - [Barbara Fusińska](http://twitter.com/basiafusinska)
-* Prezentacja: [Architektura.pptx](https://raw.githubusercontent.com/wrocnet/wrocnet.github.io/master/_assets/Architektura.pptx)
+* Prezentacja: [Architektura.pptx]({{BASE_PATH}}/assets/Architektura.pptx)
 
 
 #### Get the job done - [Mirosław Pragłowski](http://twitter.com/mpraglowski)
