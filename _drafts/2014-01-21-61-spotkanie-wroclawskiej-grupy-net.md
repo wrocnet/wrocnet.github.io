@@ -6,9 +6,9 @@ meetupno: 61
 
 
 #### Knock the jQuery out! - [Bartosz Lenar](https://twitter.com/bartoszlenar)
-* Prezentacja: -
+* Prezentacja: [KnockthejQueryOut.pptx]({{BASE_PATH}}/assets/KnockThejQueryOut.pptx)
 * Wideo: Brak
 
 #### Zdalna firma - [Andrzej Krzywda](https://twitter.com/andrzejkrzywda)
-* Prezentacja: -
+* Prezentacja: Wkrótce
 * Wideo: Brak
