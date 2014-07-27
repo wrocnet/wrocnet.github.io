@@ -162,7 +162,7 @@ a:visited { color: #a0a; }
 header#top {
     position: relative;
     width: 100%;
-    background: #222222 url('../images/background.jpeg');
+    background-color: #222;
     background-size: cover;
     color: #ffffff;
     height: 500px;
