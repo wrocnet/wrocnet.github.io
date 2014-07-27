@@ -158,3 +158,48 @@ a:visited { color: #a0a; }
 .post pre.terminal code {
   background-color: #333;
 }
+
+header#top {
+    position: relative;
+    width: 100%;
+    background: #222222 url('../images/background.jpeg');
+    background-size: cover;
+    color: #ffffff;
+    height: 500px;
+}
+
+.container {
+    min-height: 120px;
+}
+
+.navbar {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    min-height: 80px;
+}
+
+.navbar .nav li {
+    padding: 20px 0;
+}
+
+.navbar .nav li a {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #ffffff !important;
+    text-shadow: 0 0 20px #000000;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}

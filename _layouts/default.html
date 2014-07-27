@@ -6,6 +6,7 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
 
@@ -14,13 +15,21 @@
 
     </head>
     <body>
+        <header id="top">
+            <div class="header">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#top" data-scrollto="scroll"><img src="/images/logo.png" alt="Wroc.NET" /></a>
+                    </div>
 
+                    <ul class="nav navbar-nav pull-right hidden-xs">
+                    </ul>
+                </div>
+            </nav>
+            </div>
+        </header>
         <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
-
           {{ content }}
 
           <div class="footer">
