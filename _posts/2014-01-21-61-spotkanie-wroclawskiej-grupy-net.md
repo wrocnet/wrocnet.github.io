@@ -10,5 +10,5 @@ meetupno: 61
 * Wideo: Brak
 
 #### Zdalna firma - [Andrzej Krzywda](https://twitter.com/andrzejkrzywda)
-* Prezentacja: Wkrótce
+* Prezentacja: [zdalna\_firma\_wrocnet\_january\_2014.pdf]({{BASE_PATH}}/assets/zdalna_firma_wrocnet_january_2014.pdf)
 * Wideo: Brak
