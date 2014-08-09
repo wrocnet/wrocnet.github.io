@@ -1,3 +1,4 @@
 name: Wrocławska Grupa .NET 
 markdown: redcarpet
-pygments: true
+highlighter: pygments
+include: [_background.jpeg]
