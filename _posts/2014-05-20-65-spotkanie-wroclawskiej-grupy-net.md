@@ -10,4 +10,4 @@ meetupno: 65
 
 
 #### ServiceStack - .NET alternatywnie - [Łukasz Gąsior](https://twitter.com/lukaszgasior)
-* wkrótce
+* Wideo: [https://www.youtube.com/watch?v=r_o-Dsh45LQ](https://www.youtube.com/watch?v=r_o-Dsh45LQ)
