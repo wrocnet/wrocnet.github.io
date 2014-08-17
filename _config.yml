@@ -2,3 +2,4 @@ name: Wrocławska Grupa .NET
 markdown: redcarpet
 highlighter: pygments
 include: [_background.jpeg]
+encoding: utf-8
