@@ -12,5 +12,4 @@ meetupno: 66
 #### Get the job done - [Mirosław Pragłowski](http://twitter.com/mpraglowski)
 * Prezentacja: [http://praglowski.com/presentations/getthejobdone](http://praglowski.com/presentations/getthejobdone)
 * Przykładowy kod: [https://github.com/mpraglowski/getthejobdone](https://github.com/mpraglowski/getthejobdone)
-* Wideo:
-{% include youtube.md video_id='bSiAuZpnjCg' %}
+* Wideo: {% include youtube.md video_id='bSiAuZpnjCg' %}
