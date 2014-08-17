@@ -11,4 +11,4 @@ meetupno: 67
   * [http://blog.kateo.pl/Article/Unit-testing-private-methods-with-PrivateObject-and-PrivateType](http://blog.kateo.pl/Article/Unit-testing-private-methods-with-PrivateObject-and-PrivateType)
   * [http://devtalk.net/csharp/chained-null-checks-and-the-maybe-monad/](http://devtalk.net/csharp/chained-null-checks-and-the-maybe-monad/)
 * Wideo:
-{% include youtube video_id='dvMrXp9rEE8' %}
+{% include youtube.md video_id='dvMrXp9rEE8' %}
