@@ -6,8 +6,8 @@ meetupno: 65
 
 #### Wprowadzenie do zarządzania pamięcią w .NET - [Remigiusz Cieślak](emailto:remigiusz.cieslak@gmail.com)
 * Prezentacja+przykłady: [dotnetmemorymanagement.7z]({{BASE_PATH}}/assets/dotnetmemorymanagement101.7z) 
-* Wideo: [https://www.youtube.com/watch?v=pOBsjD6S8TY](https://www.youtube.com/watch?v=pOBsjD6S8TY)
+* Wideo: {% include youtube video_id='pOBsjD6S8TY' %}
 
 
 #### ServiceStack - .NET alternatywnie - [Łukasz Gąsior](https://twitter.com/lukaszgasior)
-* wkrótce
+* Wideo: {% include youtube video_id='r_o-Dsh45LQ' %}
