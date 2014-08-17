@@ -1,1 +1,2 @@
-<iframe width="630" height="360" src="//www.youtube.com/embed/{{ include.video_id }}" frameborder="0" allowfullscreen></iframe>
+<a class="video" href="https://www.youtube.com/watch?v={{ include.video_id }}">https://www.youtube.com/watch?v={{ include.video_id }}</a>
+<iframe class="video" width="630" height="360" src="//www.youtube.com/embed/{{ include.video_id }}" frameborder="0" allowfullscreen></iframe>
