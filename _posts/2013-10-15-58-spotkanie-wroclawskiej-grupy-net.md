@@ -8,7 +8,7 @@ meetupno: 58
 * Wideo: {% include youtube.md video_id='gykmJtY8KcQ' %}
 
 #### GUI na diecie - Marcin Czyżowski
-* Wideo: {% include youtube.md video_id='y1_vGvAReKM' %}
+* Wideo: {% include youtube.md video_id='y1\_vGvAReKM' %}
 
 #### Specification by Example - Weronika Łabaj
 * Wideo: {% include youtube.md video_id='UiFs1T5M-vw' %}
