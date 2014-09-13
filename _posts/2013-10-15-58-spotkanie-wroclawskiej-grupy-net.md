@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 58. spotkanie Wrocławskiej Grupy .NET
+title: 58. spotkanie - Twitter; GUI; Specification by Example
 meetupno: 58
 ---
 

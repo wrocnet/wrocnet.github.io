@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 52. spotkanie Wrocławskiej Grupy .NET
+title: 52. spotkanie - Algorytmy Genetyczne
 meetupno: 52
 ---
 

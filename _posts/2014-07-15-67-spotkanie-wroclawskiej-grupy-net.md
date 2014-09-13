@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 67. spotkanie Wrocławskiej Grupy .NET
+title: 67. spotkanie - Testy metod prywatnych i Maybe monad
 meetupno: 67
 ---
 

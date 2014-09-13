@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 54. spotkanie Wrocławskiej Grupy .NET
+title: 54. spotkanie - F#
 meetupno: 54
 ---
 

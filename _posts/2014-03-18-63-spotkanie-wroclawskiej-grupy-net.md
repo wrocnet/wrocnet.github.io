@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 63. spotkanie Wrocławskiej Grupy .NET
+title: 63. spotkanie - Programowanie w Windows Phone
 meetupno: 63
 ---
 

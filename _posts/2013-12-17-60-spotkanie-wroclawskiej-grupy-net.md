@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 60. spotkanie Wrocławskiej Grupy .NET
+title: 60. spotkanie - Fody
 meetupno: 60
 ---
 

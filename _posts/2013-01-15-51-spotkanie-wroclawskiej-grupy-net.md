@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 51. spotkanie Wrocławskiej Grupy .NET
+title: 51. spotkanie - Semantic Web
 meetupno: 51
 ---
 

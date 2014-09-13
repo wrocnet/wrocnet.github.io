@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 65. spotkanie Wrocławskiej Grupy .NET
+title: 65. spotkanie - Zarządzani pamięcią; ServiceStack
 meetupno: 65
 ---
 

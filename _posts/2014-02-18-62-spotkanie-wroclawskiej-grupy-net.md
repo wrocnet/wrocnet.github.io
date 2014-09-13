@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 62. spotkanie Wrocławskiej Grupy .NET
+title: 62. spotkanie - NancyFx; JavaScript
 meetupno: 62
 ---
 

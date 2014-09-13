@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 64. spotkanie Wrocławskiej Grupy .NET
+title: 64. spotkanie - Python
 meetupno: 64
 ---
 

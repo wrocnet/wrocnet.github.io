@@ -8,3 +8,19 @@ layout: default
 <div class="post">
 {{ content }}
 </div>
+
+<div class="container">
+  <div class="row">
+    {% if page.previous != nil %}
+    <div class="col-md-6 prev-post">
+      <a href="{{ page.previous.url }}">Poprzednie spotkanie</a>
+    </div>
+    {% endif %}
+
+    {% if page.next != nil %}
+    <div class="col-md-6 next-post">
+      <a href="{{ page.next.url }}">Następne spotkanie</a>
+    </div>
+    {% endif %}
+  </div>
+</div>
