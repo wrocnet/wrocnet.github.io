@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 68. spotkanie Wrocławskiej Grupy .NET
+title: spotkanie 68. - BITS
 meetupno: 68
 ---
 
