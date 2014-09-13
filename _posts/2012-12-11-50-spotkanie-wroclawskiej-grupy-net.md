@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 50. spotkanie Wrocławskiej Grupy .NET
+title: 50. spotkanie - Continous Delivery; Continuous Deployment
 meetupno: 50
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 55. spotkanie Wrocławskiej Grupy .NET
+title: 55. spotkanie - Unity 3D; Web API
 meetupno: 55
 ---
 

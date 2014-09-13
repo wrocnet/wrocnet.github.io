@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 48. spotkanie Wrocławskiej Grupy .NET
+title: 48. spotkanie - BDD
 meetupno: 48
 ---
 

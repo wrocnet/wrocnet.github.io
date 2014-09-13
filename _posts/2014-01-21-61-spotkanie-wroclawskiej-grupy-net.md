@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 61. spotkanie Wrocławskiej Grupy .NET
+title: 61. spotkanie - Knockout.js; Zdalna firma
 meetupno: 61
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: spotkanie 68. - BITS
+title: 68. spotkanie - BITS
 meetupno: 68
 ---
 

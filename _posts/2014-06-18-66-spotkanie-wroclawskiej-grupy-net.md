@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 66. spotkanie Wrocławskiej Grupy .NET
+title: 66. spotkanie - Architektura; Scheduling
 meetupno: 66
 ---
 

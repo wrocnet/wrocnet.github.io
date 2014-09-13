@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 59. spotkanie Wrocławskiej Grupy .NET
+title: 59. spotkanie - iOS dla programisty .NET
 meetupno: 59
 ---
 
