@@ -1,7 +1,7 @@
 ---
 layout: meetup
 title: 69. spotkanie - Literate programming, mBank
-meetupno: 68
+meetupno: 69
 ---
 
 #### Literate programming? - [Luca Bolognese](http://lucabolognese.wordpress.com/)
