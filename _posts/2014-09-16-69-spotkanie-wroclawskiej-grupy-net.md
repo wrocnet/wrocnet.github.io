@@ -6,6 +6,7 @@ meetupno: 69
 
 #### Literate programming? - [Luca Bolognese](http://lucabolognese.wordpress.com/)
 * Wpis na blogu: [Literate programming](http://lucabolognese.wordpress.com/2012/12/14/llite-language-friendly-literate-programming/  )
+* Prezentacja: [Literate programming](/assets/LiterateProgramming.pptx)
 * Wideo: {% include youtube.md video_id='XH7Cqo-Pk1E' %}
 
 #### about.mBank - [Piotr Stapp](https://twitter.com/ptrstpp950)
