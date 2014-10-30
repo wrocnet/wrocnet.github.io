@@ -1,10 +1,10 @@
 ---
 layout: meetup
-title: 70. spotkanie - Code reviews, Unconstrained isolation
+title: 70. spotkanie - Good programming practices, Unconstrained isolation
 meetupno: 70
 ---
 
-#### Code reviews  - [Jarosław Stadnicki]()
+#### Good programming practices  - [Jarosław Stadnicki]()
 * Prezentacja: [Good programming practices](/assets/good_practices.pptx)
 * Wideo: wkrótce
 
