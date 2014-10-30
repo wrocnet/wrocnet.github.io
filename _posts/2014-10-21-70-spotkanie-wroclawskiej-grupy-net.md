@@ -5,7 +5,7 @@ meetupno: 70
 ---
 
 #### Code reviews  - [Jarosław Stadnicki]()
-* Prezentacja: wkrótce
+* Prezentacja: [Good programming practices](/assets/good_practices.pptx)
 * Wideo: wkrótce
 
 #### Constrained and unconstrained isolation frameworks - [Paweł Klimczyk](http://blog.klimczyk.pl)
