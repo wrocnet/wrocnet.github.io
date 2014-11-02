@@ -10,4 +10,4 @@ meetupno: 70
 
 #### Constrained and unconstrained isolation frameworks - [Paweł Klimczyk](http://blog.klimczyk.pl)
 * Prezentacja: [Constrained and Unconstrained Isolation Frameworks](https://github.com/pawelklimczyk/Presentations/tree/master/Constrained%20And%20Unconstrained%20Isolation%20Frameworks%20in%20.NET/2014-10-21%20WrocNET)
-* Wideo:  {% include youtube.md video_id='P_xmND3sdsY' %}
+* Wideo:  {% include youtube.md video_id='P\_xmND3sdsY' %}
