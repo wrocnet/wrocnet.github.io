@@ -10,4 +10,4 @@ meetupno: 71
 
 #### GitLink - [Tomasz Pluskiewicz](http://t-code.pl)
 * Prezentacja: [GitLink](https://http://gitlink.t-code.pl/)
-* Wideo:  {% include youtube.md video_id='??' %}
+* Wideo:  {% include youtube.md video_id='P8uWy7ZmMpM' %}
