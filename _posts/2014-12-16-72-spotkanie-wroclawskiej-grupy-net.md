@@ -10,4 +10,4 @@ meetupno: 72
 
 #### Z OOP do Functional na przykładzie F# - [Michał Franc](http://www.mfranc.com/)
 * Prezentacja: [F# oczami programisty C#](http://slides.com/michalfranc/oopfunctionalpl#/)
-* Wideo:  wkrótce
+* Wideo: {% include youtube.md video_id='95fhFUuQ9u0' %}
