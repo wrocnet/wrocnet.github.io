@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="/css/screen.css">
         <meta property="og:title" content="{{ page.title }}" />
-        <meta property="og:url" content="{{ page.url }}"/>
-        <meta property="og:image" content="/images/{{ page.meetupno }}_background.jpeg" />
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+	<meta property="og:image" content="{{ site.url }}/images/{{ page.meetupno }}_background.jpeg" />
     </head>
     <body>
         <header id="top" style="background-image: url('/images/{{ page.meetupno }}_background.jpeg'), url('/images/_background.jpeg')">
