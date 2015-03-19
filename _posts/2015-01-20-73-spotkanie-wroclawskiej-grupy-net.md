@@ -5,6 +5,7 @@ meetupno: 73
 ---
 
 #### Sea-surfing in ASP.NET MVC  - [Bartosz Lenar](https://twitter.com/bartoszlenar)
+* Materiały: [Slajdy i przykłady](http://1drv.ms/1vqPB1l)
 * Wideo: {% include youtube.md video_id='VmEVmSZPfmk' %}
 
 #### ASP.NET vNext - [Michał Franc](https://twitter.com/lukaszgasior)
