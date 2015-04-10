@@ -10,5 +10,5 @@ meetupno: 74
 * Wideo: {% include youtube.md video_id='NJAVUWz-6-I' %}
 
 #### ASP.NET vNext - Bartosz Zaremba
-* Prezentacja: ...
-* Wideo: {% include youtube.md video_id='todo' %}
+* Prezentacja: brak
+* Wideo: brak
