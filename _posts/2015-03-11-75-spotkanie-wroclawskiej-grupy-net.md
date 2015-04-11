@@ -9,7 +9,8 @@ meetupno: 75
 * Wideo: wkrótce
 
 #### CQRS dla każdego - [Maciej Aniserowicz](https://twitter.com/maniserowicz)
-* Prezentacja: wkrótce
+* Prezentacja: [https://github.com/maniserowicz/cqrs-talk/raw/pdf/maniserowicz-cqrs.pdf](https://github.com/maniserowicz/cqrs-talk/raw/pdf/maniserowicz-cqrs.pdf)
+* Kod: [https://github.com/maniserowicz/cqrs-talk/blob/master/cqrs-presentation/everything.cs](https://github.com/maniserowicz/cqrs-talk/blob/master/cqrs-presentation/everything.cs)
 * Wideo: wkrótce
 
 #### CQRS/ES with Rails - [Mirosław Pragłowski](https://twitter.com/mpraglowski)
