@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 75. spotkanie - CQRS w trzech odłonach
+title: 75. spotkanie - CQRS w trzech odsłonach
 meetupno: 75
 ---
 
