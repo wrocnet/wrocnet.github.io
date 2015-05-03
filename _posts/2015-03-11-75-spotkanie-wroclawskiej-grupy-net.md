@@ -16,4 +16,4 @@ meetupno: 75
 #### CQRS/ES with Rails - [Mirosław Pragłowski](https://twitter.com/mpraglowski)
 * Prezentacja: [http://praglowski.com/presentations/cqrses/drug/](http://praglowski.com/presentations/cqrses/drug/)
 * Kod: [https://github.com/mpraglowski/cqrses-sample/](https://github.com/mpraglowski/cqrses-sample/)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='4BJre8k2J9I' %}
