@@ -6,4 +6,4 @@ meetupno: 77
 
 #### Mikro-serwisy  - [Adrian Ciura](https://twitter.com/adrianciura)
 * Prezentacja: [.pptx](/assets/Microservices-AdrianCiura.pptx)
-* Wideo: {% include youtube.md video_id='x__2IwZWQ3A' %}
+* Wideo: {% include youtube.md video_id='x\_\_2IwZWQ3A' %}
