@@ -10,7 +10,6 @@ meetupno: 76
 * Wideo: {% include youtube.md video_id='GnLQPKwJ4FQ' %}
 
 #### Żyjąc na krawędzi, czyli jak wykorzystać kod .NETowy z poziomu JavaScript i przetrwać - [Rafał Legiędź](https://twitter.com/rafek)
-* Prezentacja: wkrótce
-* Kod: wkrótce
-* Wideo: wkrótce
+* Prezentacja: [.pptx](/assets/edgejs.pptx)
+* Wideo: {% include youtube.md video_id='RSlWyPf-o2A' %}
 
