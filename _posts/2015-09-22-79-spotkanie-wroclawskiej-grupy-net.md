@@ -6,7 +6,7 @@ meetupno: 79
 
 #### Paket Package manager - [Tomasz Pluskiewicz](http://twitter.com/tpluscode)
 * Prezentacja: [reveal.js](http://paket.t-code.pl)
-* Wideo: wkótce
+* Wideo: {% include youtube.md video_id='\_fZ4RrgFRVY' %}
 
 #### VS 2015 Debugger - nowości, tips & tricks - [Paweł Łukasik](https://twitter.com/pawel_lukasik)
 * Prezentacja: wkrótce
