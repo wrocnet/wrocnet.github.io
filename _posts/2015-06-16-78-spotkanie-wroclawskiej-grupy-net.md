@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 78. spotkanie - Mikroserwisy
+title: 78. spotkanie - F# Type Providers
 meetupno: 78
 ---
 
