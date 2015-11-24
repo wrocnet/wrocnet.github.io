@@ -1,12 +1,12 @@
 ---
 layout: meetup
-title: 80. spotkanie - Stanowe aplikacje webowe, Git
-meetupno: 80
+title: 81. spotkanie - SOLID, Aplikacje SPA
+meetupno: 81
 ---
 
 #### Bądź SOLID - [Jarosaw Stadnicki](https://twitter.com/j_stadnicki)
-* Prezentacja: [PowerPoint](http://slides.com/horusiath/actor-model-event-sourcing)
-* Wideo: {% include youtube.md video_id='WI71RDyG2P8' %}
+* Prezentacja: [PowerPoint](/assets/solid.pptx)
+* Wideo: wkrótce
 
 #### Własny salon SPA (Single Page Application) - [Bartosz Lenar](https://twitter.com/bartoszlenar)
 * Prezentacja: wkrótce
