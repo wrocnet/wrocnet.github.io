@@ -8,7 +8,7 @@ meetupno: 84
 * wkrótce
 
 #### MVC 6 awesomeness is here - Piotr Kamiński
-* Prezentacja: [PowerPoint](/assets/MVC6_Piotr Kamiński _2.0.pptx)
+* Prezentacja: [PowerPoint](/assets/MVC6_Piotr_Kamiński_2.0.pptx)
 * Wideo: wkrótce
 
 #### Transition to vNext - Kamil Radlak
