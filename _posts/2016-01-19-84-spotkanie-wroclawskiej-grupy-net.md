@@ -12,7 +12,8 @@ meetupno: 84
 * Wideo: {% include youtube.md video_id='QezbGkJN5\_w' %}
 
 #### Transition to vNext - Kamil Radlak
-* wkrótce
+* Prezentacja: [reveal.js](/assets/vnext)
+* Wideo: wkrótce
 
 #### Programista .net - [Jarosław Stadnicki](http://twitter.com/j_stadnicki)
 * wkrótce
