@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- / ZEDYTUJ odpowiednio tagi: TITLE,DESCRIPTION,AUTHOR -->
+    <title>Transition to vNext</title>
+    <meta name="description" content="Dive into PHP - Blog System written in PHP">
+    <meta name="author" content="Michał Szczur <mszczur@pgs-soft.com>">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/pgs.css">
+    <link rel="stylesheet" href="css/my.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- TUTAJ ZACZYNA SIĘ PREZENTACJA - wklej poniżej swoje slajdy -->
+        <div class="slides">
+
+            <section data-state="logo">
+                <h1>Transition to vNext</h1>
+                <h3>
+						Kamil Radlak
+					</h3>
+                    <p>radlak.kamil@gmail.com</p>
+            </section>
+            <section>
+                <h2>Agenda</h2>
+                <ol>
+                    <li>First Steps, how to start?</li>
+                    <li>How to host your application?</li>
+                    <li>How does it work?</li>
+                    <li>How to work with it?</li>
+                </ol>
+            </section>
+
+            <section>
+                <section>
+                    <h1>First Steps, how to start?</h1>
+                </section>
+                <section>
+                    <h2>Visual Studio</h2>
+                    <ul>
+                        <li>Visual Studio 2015 Update 1</li>
+                        <li>ASP.NET and Web Tools 2015 (RC1)</li>
+                        <li>type in console
+                            <pre><code class="bash">λ dnvm upgrade-self
+λ dnvm update</code></pre></li>
+                        <li>and we are ready!</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>yo</h2>
+                    <p>You can also create and run project without Visual Studio by using <strong>npm</strong></p>
+                    <p><pre><code class="bash">λ npm install -g yo bower generator-aspnet gulp</code></pre></p>
+                    <img src="images/yeoman.png" />
+                </section>
+                <section>
+                    <h2>Changes, changes, changes</h2>
+                    <div>
+                        <div style="display: inline-block; width: 20%; transform: translateY(-115px);">
+                            .xsproj
+                        </div>
+                        <img src="images/xsproj.png" style="display: inline-block; width: 75%;">
+                    </div>
+                    <p>Projects are also nuget packages</p>
+                </section>
+                <section>
+                    <h2>Changes, changes, changes</h2>
+                    <div>
+                        <div style="display: inline-block; width: 44%; text-align: left; vertical-align: super;">
+                            web.config
+                            <br />packages.config
+                        </div>
+
+                        <div style="display: inline-block;width: 50%; text-align: right;">
+                            project.json
+                            <br/> project.lock.json
+                            <br/> whatever.json
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div style="display: inline-block; width: 44%; text-align: left; vertical-align: super;">
+                            global.asax</div>
+                        <div style="display: inline-block;width: 50%; text-align: right;">
+                            Startup.cs
+                            <br /> global.json
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>How to host your application?</h2>
+                </section>
+                <section>
+                    <h2>Different types of hosting</h2>
+                    <div style="display: flex; align-items: center;">
+                        <div style="display: inline-block; width: 30%;">
+                            <ul>
+                                <li>WebListener</li>
+                                <li>Kestrel</li>
+                                <li>IIS</li>
+                            </ul>
+                        </div>
+                        <div style="display: inline-block; width: 66%;">
+                            <p>Supported Request Features</p>
+                            <img src="images/table.png">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>WebListener</h2>
+                    <ul>
+                        <li>HTTP.SYS-based hosting</li>
+                        <li>Windows only</li>
+                        <li>Support features like multiple apps on single port</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Kestrel</h2>
+                    <ul>
+                        <li>Self hosting on Mac OS X and Linux</li>
+                        <li>Provided Docker image</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>IIS hosting</h2>
+                    <div class="fragment">
+                        <ul>
+                            <li>Install HttpPlatformHandler</li>
+                            <li>Use App Pool as usually</li>
+                            <li>But set "No Managed code"</li>
+                        </ul>
+                        <div>
+                            <img src="images/nomanaged.png">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Wait, what?</h2>
+                </section>
+                <section>
+                    <h2>HttpPlatformHandler</h2>
+                    <img src="images/httphandler.png">
+                    <img src="images/httphandlerscheme.png">
+                </section>
+                <section>
+                    <h2>IIS + Kestrel</h2>
+                    <img src="images/both.jpg">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>How does it work?</h2>
+                </section>
+                <section>
+                    <h2>New tools</h2>
+                    <dl>
+                        <dt>DNVM</dt>
+                        <dd>.Net Version Manager</dd>
+                        <dt>DNU</dt>
+                        <dd>Manages nuget packages in project</dd>
+                        <dt>DNX</dt>
+                        <dd>Executes commands</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h2>You can install additional commands</h2>
+                    <div><pre><code class="bash">λ dnu commands install Microsoft.Dnx.Watcher
+λ dnx-watch</code></pre></div>
+                    <ul>
+                        <li>Observes changes in code</li>
+                        <li>Restarts application and recompile</li>
+                        <li>You need only reload page</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>How to work with it</h2>
+                </section>
+                <section>
+                    <h2>Pipeline</h2>
+                    <p>You have to explicitly specify what goes to the pipeline</p>
+                    <img src="images/request-delegate-pipeline.png">
+                </section>
+            </section>
+            <section>
+                <pre class="blink"><code class="csharp">app.UseMVC();</code><span class="blinking">|</span></pre>
+                <h3>See you soon</h3>
+            </section>
+            <!-- TUTAJ KOŃCZY SIĘ PREZENTACJA -->
+        </div>
+
+    </div>
+
+    <script src="js/pgs.js"></script>
+
+    <script>
+        // Full list of configuration options available at:
+			// https://github.com/hakimel/reveafl.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'js/plugin/notes/notes.js', async: true },
+					{ src: 'plugin/tagcloud/tagcloud.js', async: true },
+				]
+			});
+
+			// Callbacks
+			Reveal.addEventListener('ready', function( event ) {
+				// Adding PGS "squares" and counter
+				$(".slide-background").append('<div class="squares"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div><div class="counter"><span class="c-h"></span>.<span class="c-v"></span></div>');
+				// Counter inceremnts
+				$('.c-h').text(Reveal.getIndices().h+1);
+				$('.c-v').text(Reveal.getIndices().v);
+			});
+
+			Reveal.addEventListener('slidechanged', function( event ) {
+				// Counter inceremnts
+				$('.c-h').text(Reveal.getIndices().h+1);
+				$('.c-v').text(Reveal.getIndices().v);
+			} );
+    </script>
+
+</body>
+
+</html>
