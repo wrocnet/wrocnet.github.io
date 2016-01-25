@@ -9,5 +9,5 @@ meetupno: 81
 * Wideo: {% include youtube.md video_id='3ioO9zYftqU' %}
 
 #### Własny salon SPA (Single Page Application) - [Bartosz Lenar](https://twitter.com/bartoszlenar)
-* Prezentacja: wkrótce
-* Wideo: wkrótce
+* Prezentacja: [PowerPoint](/assets/SPA.pptx)
+* Wideo: {% include youtube.md video_id='8PVYTV\_jT2M' %}
