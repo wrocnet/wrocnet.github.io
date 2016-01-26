@@ -16,4 +16,4 @@ meetupno: 84
 * Wideo: {% include youtube.md video_id='1caRFQyllx4' %}
 
 #### Programista .net - [Jarosław Stadnicki](http://twitter.com/j_stadnicki)
-* wkrótce
+* Prezentacja: [PowerPoint](/assets/whats-new-cs-6.pptx)
