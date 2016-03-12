@@ -1,6 +1,6 @@
 name: Wrocławska Grupa .NET 
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 include: [_background.jpeg]
 encoding: utf-8
 url: http://wrocnet.github.io
