@@ -9,11 +9,11 @@ meetupno: 84
 
 #### MVC 6 awesomeness is here - Piotr Kamiński
 * Prezentacja: [PowerPoint](/assets/MVC6_Piotr_Kamiński_2.0.pptx)
-* Wideo: {% include youtube.md video_id='QezbGkJN5\_w' %}
+* Wideo: {% include youtube.md video_id='GAQ7dCjhbr4' %}
 
 #### Transition to vNext - Kamil Radlak
 * Prezentacja: [reveal.js](/assets/vnext)
 * Wideo: {% include youtube.md video_id='1caRFQyllx4' %}
 
 #### Programista .net - [Jarosław Stadnicki](http://twitter.com/j_stadnicki)
-* wkrótce
+* Prezentacja: [PowerPoint](/assets/whats-new-cs-6.pptx)

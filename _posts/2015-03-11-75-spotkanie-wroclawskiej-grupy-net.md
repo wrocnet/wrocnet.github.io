@@ -5,8 +5,8 @@ meetupno: 75
 ---
 
 #### CQRS – moje własne podejście  - [Jakub Gutkowski](https://twitter.com/gutek)
-* Prezentacja: wkrótce
-* Wideo: wkrótce
+* Prezentacja: [PDF](/assets/Jakub_Gutkowski_CQRS.pdf)
+* Wideo: {% include youtube.md video_id='0oEYDS1hIpc' %}
 
 #### CQRS dla każdego - [Maciej Aniserowicz](https://twitter.com/maniserowicz)
 * Prezentacja: [https://github.com/maniserowicz/cqrs-talk/raw/pdf/maniserowicz-cqrs.pdf](https://github.com/maniserowicz/cqrs-talk/raw/pdf/maniserowicz-cqrs.pdf)
