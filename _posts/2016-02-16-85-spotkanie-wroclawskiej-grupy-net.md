@@ -10,4 +10,4 @@ meetupno: 85
 
 #### Unit testing w .NET - [Maciej Jędrzejewski](https://twitter.com/mjjedmac)
 * Prezentacja: wkrótce
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='EkWbeKbkOno' %}
