@@ -5,7 +5,7 @@ meetupno: 86
 ---
 
 #### Mikroserwisy, pierwsze kroczki [Jarosław Stadnicki](http://jaroslawstadnicki.pl/), Tomasz Kielar
-* Prezentacja: wkrótce
+* Prezentacja: [pptx](/assets/microservices.pptx)
 * Wideo: wkrótce
 
 #### ES6, Aurelia.io, deployd
