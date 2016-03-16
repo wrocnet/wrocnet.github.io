@@ -9,7 +9,7 @@ meetupno: 86
 * Wideo: {% include youtube.md video_id='D0XLC-tHUHM' %}
 
 #### [LT] .NET Developer na froncie - Grzegorz Oronowicz
-* Prezentacja: wkrótce
+* Prezentacja: [pdf](/assets/NET_Developer_na_froncie.pdf)
 * Wideo: {% include youtube.md video_id='iUmFBHeoM7U' %}
 
 #### AppVeyor - [Tomasz Pluskiewicz](http://twitter.com/tpluscode)
