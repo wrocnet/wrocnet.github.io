@@ -16,4 +16,4 @@ meetupno: 86
 * Wideo: wkrótce
 
 #### Codecov.io - [Łukasz Pyrzyk](https://twitter.com/lukaszpyrzyk/)
-* Wideo - wkrótce
+* Wideo - {% include youtube.md video_id='P4YOw4CyuvA' %}
