@@ -12,8 +12,8 @@ meetupno: 86
 * Prezentacja: [pdf](/assets/NET_Developer_na_froncie.pdf)
 * Wideo: {% include youtube.md video_id='iUmFBHeoM7U' %}
 
-#### AppVeyor - [Tomasz Pluskiewicz](http://twitter.com/tpluscode)
-* Wideo: wkrótce
+#### [LT] AppVeyor - [Tomasz Pluskiewicz](http://twitter.com/tpluscode)
+* Wideo: {% include youtube.md video_id='vdkksifUNs8' %}
 
-#### Codecov.io - [Łukasz Pyrzyk](https://twitter.com/lukaszpyrzyk/)
+#### [LT] Codecov.io - [Łukasz Pyrzyk](https://twitter.com/lukaszpyrzyk/)
 * Wideo - {% include youtube.md video_id='P4YOw4CyuvA' %}
