@@ -10,4 +10,4 @@ meetupno: 83
 
 #### Nie palcie frameworków! - [Szymon Pobiega](https://twitter.com/SzymonPobiega)
 * Prezentacja: [odp](/assets/dont-burn-frameworks.odp)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='N-iHyJg9xvs' %}
