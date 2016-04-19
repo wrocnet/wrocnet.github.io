@@ -5,7 +5,8 @@ meetupno: 84
 ---
 
 #### javascript: Promise to never callback - Karol Tomaszewski
-* wkrótce
+* Prezentacja: [pptx](/assets/promiseToNeverCallback.pptx)
+* Wideo: wkrótce
 
 #### MVC 6 awesomeness is here - Piotr Kamiński
 * Prezentacja: [PowerPoint](/assets/MVC6_Piotr_Kamiński_2.0.pptx)
