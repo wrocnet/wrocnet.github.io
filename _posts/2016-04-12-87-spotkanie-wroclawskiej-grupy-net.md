@@ -9,5 +9,5 @@ meetupno: 87
 * Wideo: wkrótce
 
 #### Xamarin - Damian Jarosch
-* Prezentacja: wkrótce
+* Prezentacja: [ppts](/assets/presentation-xamarinForms.pptx)
 * Wideo: wkrótce
