@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 88. spotkanie - Resume, RampUpNet
+title: 88. spotkanie - Dobre CV, RampUpNet - ekstremalna współbieżność w .NET
 meetupno: 88
 ---
 
