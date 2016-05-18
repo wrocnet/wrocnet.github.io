@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 88. spotkanie - Resume, Współbieżność w .NET
+title: 88. spotkanie - Resume, RampUpNet
 meetupno: 88
 ---
 
