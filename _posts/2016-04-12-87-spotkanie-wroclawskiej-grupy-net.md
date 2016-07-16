@@ -6,7 +6,7 @@ meetupno: 87
 
 #### .NET Core - [Łukasz Pyrzyk](https://github.com/lukasz-pyrzyk/)
 * Prezentacja: [pptx](/assets/NET-Core.pptx)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='pTshQWffo6U' %}
 
 #### Xamarin - Damian Jarosch
 * Prezentacja: [pptx](/assets/presentation-xamarinForms.pptx)
