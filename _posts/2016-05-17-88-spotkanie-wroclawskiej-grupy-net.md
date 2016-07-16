@@ -9,5 +9,5 @@ meetupno: 88
 * Wideo: wkrótce
 
 #### Moja podróż do Krainy Ekstremalnej Współbieżności w .NET  - [Szymin Kulec](https://blog.scooletz.com/)
-* Prezentacja: wkrótce
+* Prezentacja: [reveal.js](http://presentations.scooletz.com/RampUp)
 * Wideo: wkrótce
