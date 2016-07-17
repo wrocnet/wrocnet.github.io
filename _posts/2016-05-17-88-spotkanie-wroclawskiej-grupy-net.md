@@ -6,7 +6,7 @@ meetupno: 88
 
 #### Do IT right - what (not) to put on your resume - [Ewelina Dańczuk](https://twitter.com/ewelinadanczuk)
 * Prezentacja: [pptx](/assets/Fluffy-CV.pptx)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='4xXU0gQLgkQ' %}
 
 #### Moja podróż do Krainy Ekstremalnej Współbieżności w .NET  - [Szymin Kulec](https://blog.scooletz.com/)
 * Prezentacja: [reveal.js](http://presentations.scooletz.com/RampUp)
