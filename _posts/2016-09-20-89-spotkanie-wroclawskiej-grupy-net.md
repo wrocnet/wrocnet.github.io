@@ -6,7 +6,7 @@ meetupno: 89
 
 #### Warden - [Piotr Gankiewicz](http://piotrgankiewicz.com/blog)
 * Prezentacja: [pdf](/assets/warden.pdf)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='UT6ljwaXR7s' %}
 
 #### perfView - Michał Małecki
 * Prezentacja: wkrótce
