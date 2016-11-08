@@ -9,5 +9,5 @@ meetupno: 90
 * Wideo: wkrótce
 
 #### Code Crime Scene - [Paweł Klimczyk](https://twitter.com/pwlklm)
-* Prezentacja: wkrótce
+* Prezentacja: [pptx](/assets/CodeCrimeScene.pptx)
 * Wideo: wkrótce
