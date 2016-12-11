@@ -13,5 +13,5 @@ meetupno: 79
 * Wideo: {% include youtube.md video_id='9C4LGI81IPk' %}
 
 #### WebSharper - aplikacje webowe w F# - [Adrian Ciura](https://twitter.com/AdrianCiura)
-* Prezentacja: wkrótce
-* Wideo: wkrótce
+* Prezentacja: [prezi.com](https://prezi.com/1nwglkkmoht8/websharpercom/)
+* Wideo: {% include youtube.md video_id='PoZ42q12CIQ' %}
