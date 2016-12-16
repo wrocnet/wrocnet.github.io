@@ -1,0 +1,502 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GraphQL</title>
+    <meta name="description" content="Facebook's application-level query language">
+    <meta name="author" content="Bartosz Sypytkowski (@horusiath)">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="//code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="//code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/deedle.css" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    <script src="fsharp.formatting/styles/tips.js" type="text/javascript"></script>
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/fsreveal.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <script language="javascript" type="text/javascript">
+        function init()
+        {
+            websocket = new WebSocket("ws://"+window.location.host+"/websocket");
+            websocket.onmessage = function(evt) { location.reload(); };
+        }
+        window.addEventListener("load", init, false);
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section >
+<h1>GraphQL</h1>
+<p>Rest API 2.0?</p>
+</section>
+<section >
+<h2>Agenda</h2>
+<ul>
+<li>REST API: any problems?</li>
+<li>
+What is GraphQL?
+<ul>
+<li>Specification</li>
+<li>Tooling</li>
+</ul>
+</li>
+<li>
+What is FSharp.Data.GraphQL?
+<ul>
+<li>Demo</li>
+</ul>
+</li>
+<li>Lessons learned</li>
+<li>Post mortem: RelayJS</li>
+</ul>
+</section>
+<section >
+<section >
+<h2>RESTful API</h2>
+<p>Common problems:</p>
+<ul>
+<li>What is REST? (baby don't hurt me)</li>
+<li>Tied to HTTP request-response model</li>
+<li>Over- and underfetching</li>
+</ul>
+</section>
+<section >
+<h2>"Rules" of REST</h2>
+<p><img src="./images/guidelines.jpg" alt="More like guidelines" /></p>
+<p>What if someone doesn't give a shit?</p>
+<aside class="notes">
+There are not direct rules, that will make your services REST-incompatible if you violate them.<br/>
+You need to hope, that your API producer understands REST principles the same way you do.<br/>
+</aside>
+</section>
+<section >
+<h2>Tied to HTTP request/response</h2>
+<p>Which HTTP verb will you use for create request over web sockets? XD</p>
+<aside class="notes">
+REST is inherently tied to HTTP (req/rep in particular). Need some other medium? Sucks to be you.<br/>
+</aside>
+</section>
+<section >
+<h2>Over- and underfetching</h2>
+<p>When you need a little more or a little less.</p>
+<aside class="notes">
+What when API you get doesn't provide all data under single route call?<br/>
+What when the only usefull route call provides way more data than you need?<br/>
+Under- and overfetching may lead to an API blowup, where every user action has a separate request/response cycle.<br/>
+</aside>
+</section>
+</section>
+<section >
+<section >
+<h2>What is GraphQL?</h2>
+<p>Standard for application-level query language invented by Facebook.</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*EvP8nemSom3UttmbidCiJg.png" alt="companies using graphql" /></p>
+</section>
+<section >
+<h2>It's cross-platform</h2>
+<ul>
+<li>FSharp.Data.GraphQL (<em>F#</em>)</li>
+<li>graphql-js (<em>JavaScript</em>)</li>
+<li>graphql-ruby (<em>Ruby</em>)</li>
+<li>graphql-php (<em>PHP</em>)</li>
+<li>graphql-go (<em>Go</em>)</li>
+<li>graphql-net, graphql-dotnet (<em>C#</em>)</li>
+<li>graphql-java (<em>Java</em>)</li>
+<li>graphene (<em>Python</em>)</li>
+<li>Sangria (<em>Scala</em>)</li>
+<li>absinthe (<em>Elixir</em>)</li>
+<li>PostGraphQL (<em>PostgreSQL</em>)</li>
+<li>graphql-lua (<em>Lua</em>)</li>
+<li>graphql-haskell (<em>Haskell</em>)</li>
+<li>graphql-clj (<em>Clojure</em>)</li>
+</ul>
+</section>
+<section >
+<h2>What does it look like?</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="./images/json.png" style="height: 500px;"/></td>
+<td><img src="./images/query.png" style="height: 500px; width:400px;"/></td>
+</tr>
+</tbody>
+</table>
+
+<aside class="notes">
+Language is based on JSON.<br/>
+</aside>
+</section>
+<section >
+<h2>It's statically typed</h2>
+<p>Schema notation:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+<span class="l">17: </span>
+<span class="l">18: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang="graphql">schema {
+    query: Query
+}
+
+type Query {
+    people(take: Int): [Person]!
+}
+
+interface Character {
+    id: String!
+    name: String!
+}
+
+type Person implements Character {
+    id: String!
+    name: String!
+    friends: [Character]!
+}
+</code></pre></td></tr></table>
+<aside class="notes">
+Having schema language is great when it comes to talk with people with different backgrounds.<br/>
+As GraphQL is not platform specyfic, Python/Ruby/.NET/JVM people can easy talk about same thing.<br/>
+</aside>
+</section>
+<section >
+<h2>Type system</h2>
+<ul>
+<li>Scalars</li>
+<li>Enums</li>
+<li>Objects</li>
+<li>Interfaces</li>
+<li>Unions</li>
+<li>InputObjects</li>
+<li>Lists / NonNulls</li>
+</ul>
+<p>Directives:</p>
+<ul>
+<li>@skip</li>
+<li>@include</li>
+<li>and more...</li>
+</ul>
+<aside class="notes">
+Since it's cross-platform it needs type system, that can be implemented on all platforms.<br/>
+</aside>
+</section>
+<section >
+<h2>Introspection</h2>
+<p>Ability to retrieve an information about your schema by using GraphQL itself.</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang="graphql">query GetTypes {
+    __schema {
+        types {
+            name
+            fields {
+                name
+                type {
+                    name
+                }
+            }
+        }
+    }
+}
+</code></pre></td></tr></table>
+<p>(Excelent for tooling)</p>
+<aside class="notes">
+Once you can meta-query your schema, you can use GraphQL itself to ask GraphQL server about all of its capabilities.<br/>
+No need for separate standards, it's all self contained.<br/>
+</aside>
+</section>
+</section>
+<section >
+<section >
+<h2>FSharp.Data.GraphQL</h2>
+<p>F# implementation of GraphQL standard for client and server.</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span class="i">FSharp</span><span class="o">.</span><span class="i">Data</span><span class="o">.</span><span class="i">GraphQL</span><span class="o">.</span><span class="i">Types</span>
+
+<span class="k">let</span> <span class="k">rec</span> <span class="i">Person</span> <span class="o">=</span> <span class="i">Define</span><span class="o">.</span><span class="i">Object</span>(<span class="s">&quot;Person&quot;</span>, <span class="k">fun</span> () <span class="k">-&gt;</span> [
+    <span class="i">Define</span><span class="o">.</span><span class="i">Field</span>(<span class="s">&quot;name&quot;</span>, <span class="i">String</span>, <span class="k">fun</span> _ <span class="i">p</span> <span class="k">-&gt;</span> <span class="i">p</span><span class="o">.</span><span class="i">FirstName</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="i">p</span><span class="o">.</span><span class="i">LastName</span>)
+    <span class="i">Define</span><span class="o">.</span><span class="i">Field</span>(<span class="s">&quot;friends&quot;</span>, <span class="i">ListOf</span> <span class="i">Person</span>, <span class="k">fun</span> _ <span class="i">p</span> <span class="k">-&gt;</span> <span class="i">p</span><span class="o">.</span><span class="i">Friends</span>)
+    <span class="i">Define</span><span class="o">.</span><span class="i">AsyncField</span>(<span class="s">&quot;pic&quot;</span>, <span class="i">Url</span>, <span class="k">fun</span> _ <span class="i">p</span> <span class="k">-&gt;</span> <span class="i">asyncGetAvatar</span> <span class="i">p</span><span class="o">.</span><span class="i">Id</span>)
+])
+
+<span class="k">let</span> <span class="i">Query</span> <span class="o">=</span> <span class="i">Define</span><span class="o">.</span><span class="i">Object</span>(<span class="s">&quot;Query&quot;</span>, [
+    <span class="i">Define</span><span class="o">.</span><span class="i">Field</span>(<span class="s">&quot;people&quot;</span>, <span class="i">ListOf</span> <span class="i">Person</span>, <span class="s">&quot;&quot;</span>, [ <span class="i">Define</span><span class="o">.</span><span class="i">Input</span>(<span class="s">&quot;take&quot;</span>, <span class="i">Int</span>) ], 
+        <span class="k">fun</span> <span class="i">ctx</span> <span class="i">db</span> <span class="k">-&gt;</span> <span class="i">db</span><span class="o">.</span><span class="i">People</span> <span class="o">|&gt;</span> <span class="i">Seq</span><span class="o">.</span><span class="i">take</span> (<span class="i">ctx</span><span class="o">.</span><span class="i">Arg</span> <span class="s">&quot;take&quot;</span>))
+])
+
+<span class="k">let</span> <span class="i">schema</span> <span class="o">=</span> <span class="i">Schema</span>(<span class="i">Query</span>)
+</code></pre></td>
+</tr>
+</table>
+<aside class="notes">
+Don't go into details.<br/>
+</aside>
+</section>
+<section >
+<h2>It's like a language</h2>
+<ol>
+<li>Compilation</li>
+<li>Planning</li>
+<li>Execution</li>
+</ol>
+<aside class="notes">
+Compilation - once schema is being created, your server capabilities have been set. Try to prepare as much as possible at this point.<br/>
+Planning - first time an unique query comes in. Now you know what's needed - all fields etc. From here only dynamic parts are variables.<br/>
+Execution - when all data has been proided and we can execute query and produce results.<br/>
+</aside>
+</section>
+</section>
+<section >
+<section >
+<h2>It all comes with a cost...</h2>
+<ul>
+<li>Development speed <strong>over</strong> machine speed</li>
+<li>Joins <strong>over</strong> aggregations</li>
+<li>Dynamic queries <strong>can lead to</strong> N+1 SELECTs</li>
+<li><strong>Big</strong> responses</li>
+</ul>
+<aside class="notes">
+It's made for pleasant frontend experience. Don't expect performance equal to actions with custom-tailored database queries.<br/>
+GraphQL excels at joins, but has no notion for aggregations.<br/>
+Since required fields are known only at runtime, it's hard to create code where you prefetch all required data in a single database call.<br/>
+Since we don't make X server requests, a single response can get quite big - i.e. Facebook's Introspection result is a 70-200MB JSON in size. <br/>
+</aside>
+</section>
+<section >
+<h2>Joins vs aggregations</h2>
+<table>
+<thead>
+<tr class="header">
+<th><p>Good</p></th>
+<th><p>Bad</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><img src="./images/01.png" alt="graph" /></p></td>
+<td><p><img src="./images/tabelka.png" alt="tables" /></p></td>
+</tr>
+</tbody>
+</table>
+
+<aside class="notes">
+If you need aggregated data, OData may be better fit here.<br/>
+</aside>
+</section>
+<section >
+<h2>N+1 SELECT problem in GraphQL</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="./images/nplusone.png" /></td>
+<td><img src="./images/02.png" style="height:260px;" /></td>
+</tr>
+</tbody>
+</table>
+
+<aside class="notes">
+How to predict which tables to prefetch when required fields can change with every query.<br/>
+NOTE: good part - since all programming is pretty generic, once you fix one problem, you fix it everywhere, it occurs. <br/>
+</aside>
+</section>
+<section >
+<h2>Batched responses can get quite big</h2>
+<ul>
+<li>How to chunk big responses?</li>
+<li>How to block oversized queries?</li>
+</ul>
+<aside class="notes">
+It would be good to send the most importand data immediatelly, and then fetch the "less" importand details in the background.<br/>
+What if user will ask for half of the database - we need to be able to block mallicious queries.<br/>
+</aside>
+</section>
+</section>
+<section >
+<section >
+<h2>Discoveries down the road</h2>
+<p>What approaches did we use to address problems we've met?</p>
+</section>
+<section >
+<h2>AsyncVal</h2>
+<p>Uniform API to work with both sync/async computations:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// works well with Async computations...</span>
+<span class="i">asyncVal</span> {
+    <span class="k">return!</span> <span class="i">Http</span><span class="o">.</span><span class="i">AsyncRequestString</span>(<span class="s">&quot;http://some-domain.co&quot;</span>)
+} <span class="o">|&gt;</span> <span class="i">AsyncVal</span><span class="o">.</span><span class="i">get</span>
+
+<span class="c">// ... while this is still pretty fast</span>
+<span class="i">asyncVal</span> { <span class="k">return</span> <span class="n">1</span> } <span class="o">|&gt;</span> <span class="i">AsyncVal</span><span class="o">.</span><span class="i">get</span>
+</code></pre></td>
+</tr>
+</table>
+<p>Fast, low overhead in synchronous cases:</p>
+<ul>
+<li><strong>~3000 times faster</strong> than async.Return</li>
+<li><strong>No extra heap allocations!</strong></li>
+</ul>
+<aside class="notes">
+It's similar to `ValueTask<>` proposal for .NET core TPL<br/>
+</aside>
+</section>
+<section >
+<h2>Execution plan</h2>
+<p>Know what's going to be executed before executing it.</p>
+<p><img src="./images/schema-and-query.png" alt="Schema and query" />
+<img src="./images/03.png" style="height:278px;"/></p>
+<aside class="notes">
+Execution plan merged server side informations (field types, how to resolve data from them) <br/>
+with a client side query AST. It also inlines requested fragments. Therefore it provides a <br/>
+ready description of what and how should be resolved during query execution before starting<br/>
+execution phase itself.<br/>
+</aside>
+</section>
+<section >
+<h2>Property tracker</h2>
+<p>Know what's going to be accessed before accessing it.</p>
+<p><em>Execution plan infers usage of objects and fields defined GraphQL schema</em></p>
+<p><em>Property tracker infers usage of .NET objects and properties directly from the code before it executes</em></p>
+<aside class="notes">
+When trying to "marry" GraphQL with SQL backend, we noticed, that sometimes our domain model (expressed<br/>
+in GraphQL schema) doesn't match SQL-schema. In that case execution plan is not enough. We needed some<br/>
+way of informing ORMs which tables to prefetch, even when requested properties where not described as<br/>
+GraphQL fields.<br/>
+Property tracker extends execution plan to dynamic code analysis in order to get a tree of .NET properties<br/>
+that is accessed by the executed code (as far as possible).<br/>
+</aside>
+</section>
+<section >
+<h2>Future plans</h2>
+<ul>
+<li>Partial responses (<a href="https://github.com/bazingatechnologies/FSharp.Data.GraphQL/issues/93">@defer</a> directive)</li>
+<li>Subscriptions</li>
+<li>Query complexity analysis</li>
+<li>IL code emitter</li>
+</ul>
+<p>(Keep track of improvements on <a href="https://github.com/bazingatechnologies/FSharp.Data.GraphQL/issues">github</a>)</p>
+<aside class="notes">
+Use `AsyncSeq<>` to return partially available data - so that "important" stuff is sent right away, and rest is send later.<br/>
+Support for pub/sub pattern - not yet part of GraphQL standard, but done as experimental in many implementations.<br/>
+Analyse query complexity before executing it in order to avoid server overrun.<br/>
+</aside>
+</section>
+</section>
+<section >
+<h2>End</h2>
+<p>References:</p>
+<ul>
+<li>GraphQL quickstart: <a href="http://graphql.org/learn/">http://graphql.org/learn/</a></li>
+<li>Project site: <a href="http://bazingatechnologies.github.io/FSharp.Data.GraphQL/">http://bazingatechnologies.github.io/FSharp.Data.GraphQL/</a></li>
+<li>Apollo stack: <a href="http://www.apollostack.com/">http://www.apollostack.com/</a></li>
+<li>RelayJS - client-side data layer: <a href="https://facebook.github.io/relay/">https://facebook.github.io/relay/</a></li>
+</ul>
+</section>
+
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // Add the nohighlight class and data-noescape attribute to code elements that have already been formatted by FSharp.Formatting
+        $('pre.highlighted code').addClass('nohighlight').attr('data-noescape', '');
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+</body>
+</html>
+
