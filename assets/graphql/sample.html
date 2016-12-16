@@ -1,0 +1,404 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Presentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="unkown">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="//code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="//code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/deedle.css" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    <script src="fsharp.formatting/styles/tips.js" type="text/javascript"></script>
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/fsreveal.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <script language="javascript" type="text/javascript">
+        function init()
+        {
+            websocket = new WebSocket("ws://"+window.location.host+"/websocket");
+            websocket.onmessage = function(evt) { location.reload(); };
+        }
+        window.addEventListener("load", init, false);
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section >
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">  1: </span>
+<span class="l">  2: </span>
+<span class="l">  3: </span>
+<span class="l">  4: </span>
+<span class="l">  5: </span>
+<span class="l">  6: </span>
+<span class="l">  7: </span>
+<span class="l">  8: </span>
+<span class="l">  9: </span>
+<span class="l"> 10: </span>
+<span class="l"> 11: </span>
+<span class="l"> 12: </span>
+<span class="l"> 13: </span>
+<span class="l"> 14: </span>
+<span class="l"> 15: </span>
+<span class="l"> 16: </span>
+<span class="l"> 17: </span>
+<span class="l"> 18: </span>
+<span class="l"> 19: </span>
+<span class="l"> 20: </span>
+<span class="l"> 21: </span>
+<span class="l"> 22: </span>
+<span class="l"> 23: </span>
+<span class="l"> 24: </span>
+<span class="l"> 25: </span>
+<span class="l"> 26: </span>
+<span class="l"> 27: </span>
+<span class="l"> 28: </span>
+<span class="l"> 29: </span>
+<span class="l"> 30: </span>
+<span class="l"> 31: </span>
+<span class="l"> 32: </span>
+<span class="l"> 33: </span>
+<span class="l"> 34: </span>
+<span class="l"> 35: </span>
+<span class="l"> 36: </span>
+<span class="l"> 37: </span>
+<span class="l"> 38: </span>
+<span class="l"> 39: </span>
+<span class="l"> 40: </span>
+<span class="l"> 41: </span>
+<span class="l"> 42: </span>
+<span class="l"> 43: </span>
+<span class="l"> 44: </span>
+<span class="l"> 45: </span>
+<span class="l"> 46: </span>
+<span class="l"> 47: </span>
+<span class="l"> 48: </span>
+<span class="l"> 49: </span>
+<span class="l"> 50: </span>
+<span class="l"> 51: </span>
+<span class="l"> 52: </span>
+<span class="l"> 53: </span>
+<span class="l"> 54: </span>
+<span class="l"> 55: </span>
+<span class="l"> 56: </span>
+<span class="l"> 57: </span>
+<span class="l"> 58: </span>
+<span class="l"> 59: </span>
+<span class="l"> 60: </span>
+<span class="l"> 61: </span>
+<span class="l"> 62: </span>
+<span class="l"> 63: </span>
+<span class="l"> 64: </span>
+<span class="l"> 65: </span>
+<span class="l"> 66: </span>
+<span class="l"> 67: </span>
+<span class="l"> 68: </span>
+<span class="l"> 69: </span>
+<span class="l"> 70: </span>
+<span class="l"> 71: </span>
+<span class="l"> 72: </span>
+<span class="l"> 73: </span>
+<span class="l"> 74: </span>
+<span class="l"> 75: </span>
+<span class="l"> 76: </span>
+<span class="l"> 77: </span>
+<span class="l"> 78: </span>
+<span class="l"> 79: </span>
+<span class="l"> 80: </span>
+<span class="l"> 81: </span>
+<span class="l"> 82: </span>
+<span class="l"> 83: </span>
+<span class="l"> 84: </span>
+<span class="l"> 85: </span>
+<span class="l"> 86: </span>
+<span class="l"> 87: </span>
+<span class="l"> 88: </span>
+<span class="l"> 89: </span>
+<span class="l"> 90: </span>
+<span class="l"> 91: </span>
+<span class="l"> 92: </span>
+<span class="l"> 93: </span>
+<span class="l"> 94: </span>
+<span class="l"> 95: </span>
+<span class="l"> 96: </span>
+<span class="l"> 97: </span>
+<span class="l"> 98: </span>
+<span class="l"> 99: </span>
+<span class="l">100: </span>
+<span class="l">101: </span>
+<span class="l">102: </span>
+<span class="l">103: </span>
+<span class="l">104: </span>
+<span class="l">105: </span>
+<span class="l">106: </span>
+<span class="l">107: </span>
+<span class="l">108: </span>
+<span class="l">109: </span>
+<span class="l">110: </span>
+<span class="l">111: </span>
+<span class="l">112: </span>
+<span class="l">113: </span>
+<span class="l">114: </span>
+<span class="l">115: </span>
+<span class="l">116: </span>
+<span class="l">117: </span>
+<span class="l">118: </span>
+<span class="l">119: </span>
+<span class="l">120: </span>
+<span class="l">121: </span>
+<span class="l">122: </span>
+<span class="l">123: </span>
+<span class="l">124: </span>
+<span class="l">125: </span>
+<span class="l">126: </span>
+<span class="l">127: </span>
+<span class="l">128: </span>
+<span class="l">129: </span>
+<span class="l">130: </span>
+<span class="l">131: </span>
+<span class="l">132: </span>
+<span class="l">133: </span>
+<span class="l">134: </span>
+<span class="l">135: </span>
+<span class="l">136: </span>
+<span class="l">137: </span>
+<span class="l">138: </span>
+<span class="l">139: </span>
+<span class="l">140: </span>
+<span class="l">141: </span>
+<span class="l">142: </span>
+<span class="l">143: </span>
+<span class="l">144: </span>
+<span class="l">145: </span>
+<span class="l">146: </span>
+<span class="l">147: </span>
+<span class="l">148: </span>
+<span class="l">149: </span>
+<span class="l">150: </span>
+<span class="l">151: </span>
+<span class="l">152: </span>
+<span class="l">153: </span>
+<span class="l">154: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// (**</span>
+<span class="c">// - title : FsReveal </span>
+<span class="c">// - description : Introduction to FsReveal</span>
+<span class="c">// - author : Karlkim Suwanmongkol</span>
+<span class="c">// - theme : Sky</span>
+<span class="c">// - transition : default</span>
+
+<span class="c">// ***</span>
+
+<span class="c">// ### What is FsReveal?</span>
+
+<span class="c">// - Generates [reveal.js](http://lab.hakim.se/reveal-js/#/) presentation from [markdown](http://daringfireball.net/projects/markdown/)</span>
+<span class="c">// - Utilizes [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) for markdown parsing</span>
+
+<span class="c">// ***</span>
+
+<span class="c">// ### Reveal.js</span>
+
+<span class="c">// - A framework for easily creating beautiful presentations using HTML.  </span>
+  
+<span class="c">// &gt; **Atwood&#39;s Law**: any application that can be written in JavaScript, will eventually be written in JavaScript.</span>
+
+<span class="c">// ***</span>
+
+<span class="c">// ### FSharp.Formatting</span>
+
+<span class="c">// - F# tools for generating documentation (Markdown processor and F# code formatter).</span>
+<span class="c">// - It parses markdown and F# script file and generates HTML or PDF.</span>
+<span class="c">// - Code syntax highlighting support.</span>
+<span class="c">// - It also evaluates your F# code and produce tooltips.</span>
+
+<span class="c">// ***</span>
+
+<span class="c">// ### Syntax Highlighting</span>
+
+<span class="c">// #### F# (with tooltips)</span>
+
+<span class="c">// *)</span>
+<span class="c">// let a = 5</span>
+<span class="c">// let factorial x = [1..x] |&gt; List.reduce (*)</span>
+<span class="c">// let c = factorial a</span>
+<span class="c">// (** </span>
+<span class="c">// `c` is evaluated for you</span>
+<span class="c">// *)</span>
+<span class="c">// (*** include-value: c ***)</span>
+<span class="c">// (**</span>
+
+<span class="c">// --- </span>
+
+<span class="c">// #### More F#</span>
+
+<span class="c">// *)</span>
+<span class="c">// [&lt;Measure&gt;] type sqft</span>
+<span class="c">// [&lt;Measure&gt;] type dollar</span>
+<span class="c">// let sizes = [|1700&lt;sqft&gt;;2100&lt;sqft&gt;;1900&lt;sqft&gt;;1300&lt;sqft&gt;|]</span>
+<span class="c">// let prices = [|53000&lt;dollar&gt;;44000&lt;dollar&gt;;59000&lt;dollar&gt;;82000&lt;dollar&gt;|] </span>
+<span class="c">// (**</span>
+
+<span class="c">// #### `prices.[0]/sizes.[0]`</span>
+
+<span class="c">// *)</span>
+<span class="c">// (*** include-value: prices.[0]/sizes.[0] ***)</span>
+<span class="c">// (**</span>
+
+<span class="c">// ---</span>
+
+<span class="c">// #### C#</span>
+
+<span class="c">//     [lang=cs]</span>
+<span class="c">//     using System;</span>
+
+
+<span class="c">//     class Program</span>
+<span class="c">//     {</span>
+<span class="c">//         static void Main()</span>
+<span class="c">//         {</span>
+<span class="c">//             Console.WriteLine(&quot;Hello, world!&quot;);</span>
+<span class="c">//         }</span>
+<span class="c">//     }</span>
+
+
+<span class="c">// ---</span>
+
+<span class="c">// #### JavaScript</span>
+
+<span class="c">//     [lang=js]</span>
+<span class="c">//     function copyWithEvaluation(iElem, elem) {</span>
+<span class="c">//       return function (obj) {</span>
+<span class="c">//           var newObj = {};</span>
+<span class="c">//           for (var p in obj) {</span>
+<span class="c">//               var v = obj[p];</span>
+<span class="c">//               if (typeof v === &quot;function&quot;) {</span>
+<span class="c">//                   v = v(iElem, elem);</span>
+<span class="c">//               }</span>
+<span class="c">//               newObj[p] = v;</span>
+<span class="c">//           }</span>
+<span class="c">//           if (!newObj.exactTiming) {</span>
+<span class="c">//               newObj.delay += exports._libraryDelay;</span>
+<span class="c">//           }</span>
+<span class="c">//           return newObj;</span>
+<span class="c">//       };</span>
+<span class="c">//     }</span>
+
+<span class="c">// ---</span>
+
+<span class="c">// #### Haskell</span>
+ 
+<span class="c">//     [lang=haskell]</span>
+<span class="c">//     recur_count k = 1 : 1 : zipWith recurAdd (recur_count k) (tail (recur_count k))</span>
+<span class="c">//             where recurAdd x y = k * x + y</span>
+
+<span class="c">//     main = do</span>
+<span class="c">//       argv &lt;- getArgs</span>
+<span class="c">//       inputFile &lt;- openFile (head argv) ReadMode</span>
+<span class="c">//       line &lt;- hGetLine inputFile</span>
+<span class="c">//       let [n,k] = map read (words line)</span>
+<span class="c">//       printf &quot;%d\n&quot; ((recur_count k) !! (n-1))</span>
+
+
+<span class="c">// *code from [NashFP/rosalind](https://github.com/NashFP/rosalind/blob/master/mark_wutka%2Bhaskell/FIB/fib_ziplist.hs)*</span>
+
+<span class="c">// ---</span>
+
+<span class="c">// ### SQL</span>
+ 
+<span class="c">//     [lang=sql]</span>
+<span class="c">//     select * </span>
+<span class="c">//     from </span>
+<span class="c">//       (select 1 as Id union all select 2 union all select 3) as X </span>
+<span class="c">//     where Id in (@Ids1, @Ids2, @Ids3)</span>
+
+<span class="c">// *sql from [Dapper](https://code.google.com/p/dapper-dot-net/)* </span>
+
+<span class="c">// ***</span>
+
+<span class="c">// **Bayes&#39; Rule in LaTeX**</span>
+
+<span class="c">// $ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $</span>
+
+<span class="c">// ***</span>
+
+<span class="c">// ### The Reality of a Developer&#39;s Life </span>
+
+<span class="c">// **When I show my boss that I&#39;ve fixed a bug:**</span>
+  
+<span class="c">// ![When I show my boss that I&#39;ve fixed a bug](http://www.topito.com/wp-content/uploads/2013/01/code-07.gif)</span>
+  
+<span class="c">// **When your regular expression returns what you expect:**</span>
+  
+<span class="c">// ![When your regular expression returns what you expect](http://www.topito.com/wp-content/uploads/2013/01/code-03.gif)</span>
+  
+<span class="c">// *from [The Reality of a Developer&#39;s Life - in GIFs, Of Course](http://server.dzone.com/articles/reality-developers-life-gifs)*</span>
+
+<span class="c">// *)</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // Add the nohighlight class and data-noescape attribute to code elements that have already been formatted by FSharp.Formatting
+        $('pre.highlighted code').addClass('nohighlight').attr('data-noescape', '');
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+</body>
+</html>
+

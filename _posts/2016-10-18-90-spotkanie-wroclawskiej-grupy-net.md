@@ -5,7 +5,7 @@ meetupno: 90
 ---
 
 #### GraphQL - następca REST API? - [Bartosz Sypytkowski](https://twitter.com/horusiath)
-* Prezentacja: wkrótce
+* Prezentacja: [reveal.js](/assets/graphql/index.html)
 * Wideo: {% include youtube.md video_id='z92i1vgQxRI' %}
 
 #### Code Crime Scene - [Paweł Klimczyk](https://twitter.com/pwlklm)
