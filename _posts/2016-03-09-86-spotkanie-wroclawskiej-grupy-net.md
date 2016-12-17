@@ -19,7 +19,7 @@ meetupno: 86
 * Wideo - {% include youtube.md video_id='P4YOw4CyuvA' %}
 
 #### [LT] "Jak ja nie cierpię wzorców projektowych" - [Łukasz Olbromski](https://twitter.com/lukaszolbromski)
-* Wideo - wkrótce
+* Wideo - {% include youtube.md video_id='ubotnXK8OnQ' %}
 
 #### [LT] AutoFixture - [Krzysztof Morcinek](https://krzysztofmorcinek.wordpress.com/)
 * Wideo - {% include youtube.md video_id='plOJHD7Gs9o' %}
