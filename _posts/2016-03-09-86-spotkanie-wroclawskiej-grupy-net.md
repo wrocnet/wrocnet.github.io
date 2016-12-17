@@ -22,4 +22,4 @@ meetupno: 86
 * Wideo - wkrótce
 
 #### [LT] AutoFixture - [Krzysztof Morcinek](https://krzysztofmorcinek.wordpress.com/)
-* Wideo - wkrótce
+* Wideo - {% include youtube.md video_id='plOJHD7Gs9o' %}
