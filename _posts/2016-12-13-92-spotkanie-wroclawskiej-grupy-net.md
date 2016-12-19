@@ -10,5 +10,5 @@ meetupno: 92
 * Wideo: wkrótce
 
 #### Is There Any News (pet project) - [Jarosław Stadnicki](http://jaroslawstadnicki.pl)
-* Prezentacja: wkrótce
+* Prezentacja: [.pptx](/assets/itan.pptx)
 * Wideo: wkrótce
