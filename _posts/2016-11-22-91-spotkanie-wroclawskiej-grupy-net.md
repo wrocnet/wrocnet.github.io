@@ -5,7 +5,7 @@ meetupno: 91
 ---
 
 #### RevDeBug, a new reverse debugger for .NET - [Adam Kruszewski](https://www.revdebug.com/)
-* Prezentacja: wkrótce
+* Prezentacja: [PDF](/assets/RevDeBug.pdf)
 * Wideo: wkrótce
 
 #### Azure na produkcji - [Marcin Kostuch](http://www.homebook.pl/)
