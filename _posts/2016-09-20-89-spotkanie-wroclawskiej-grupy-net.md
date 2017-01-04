@@ -9,5 +9,5 @@ meetupno: 89
 * Wideo: {% include youtube.md video_id='UT6ljwaXR7s' %}
 
 #### perfView - Michał Małecki
-* Prezentacja: wkrótce
+* Prezentacja: [ppt](/assets/PerfView.ppt)
 * Wideo nie będzie z powodu problemu technicznego. Bardzo przepraszamy
