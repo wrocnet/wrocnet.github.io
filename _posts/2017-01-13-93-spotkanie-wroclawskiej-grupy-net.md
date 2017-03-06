@@ -1,7 +1,7 @@
 ---
 layout: meetup
 title: 93. spotkanie - OzCode, Stress, Nauka
-meetupno: 92
+meetupno: 93
 ---
 
 #### OzCode - [Łukasz Kurzyniec](http://kurzyniec.pl)
