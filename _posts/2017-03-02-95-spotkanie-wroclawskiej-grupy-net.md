@@ -9,5 +9,4 @@ meetupno: 95
 * Wideo: wkrótce
 
 ### Testowanie scenariuszy wielowątkowych w .NET - [Maciej Aniserowicz](https://twitter.com/maniserowicz)
-* Prezencja: wkrótce
-* Materiały: wkrótce
+* Tym razem materiałów brak.
