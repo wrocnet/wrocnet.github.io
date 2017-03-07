@@ -10,4 +10,4 @@ meetupno: 91
 
 #### Azure na produkcji - [Marcin Kostuch](http://www.homebook.pl/)
 * Prezentacja: [PDF](/assets/Azure.Homebook.pl.pdf)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='4gcPm4ffXXI' %}
