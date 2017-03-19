@@ -6,7 +6,7 @@ meetupno: 93
 
 #### OzCode - [Łukasz Kurzyniec](http://kurzyniec.pl)
 * Prezentacja: wkrótce
-* Wideo: 
+* Wideo: {% include youtube.md video_id='pAJ7YD54ZMA' %}
 
 #### Was Steve Jobs stressed Out? - [Adrian Stefaniak](https://www.linkedin.com/in/adrian-stefaniak/)
 * Prezentacja: wkrótce
