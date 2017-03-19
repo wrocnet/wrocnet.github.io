@@ -13,5 +13,5 @@ meetupno: 93
 * Wideo: {% include youtube.md video_id='AKMWsB63F0w' %}
 
 #### Learning new language/framework - [Paweł Klimczyk](http://blog.klimczyk.pl)
-* Prezentacja: wkrótce
+* Prezentacja: [pptx](/assets/learning_new_language.pptx)
 * Wideo: {% include youtube.md video_id='cs1GUajPOVs' %}
