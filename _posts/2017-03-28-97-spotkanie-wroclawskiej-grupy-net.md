@@ -8,6 +8,6 @@ meetupno: 97
 * Prezentacja: [pptx](/assets/JSON-SQLServer2016.pptx)
 * Wideo: wkrótce
 
-### Microsoft Cognitive API "Put intelligence APIs to work" - [Paweł Łukasik](https://twitter.com/pawel_lukasik)
+#### Microsoft Cognitive API "Put intelligence APIs to work" - [Paweł Łukasik](https://twitter.com/pawel_lukasik)
 * Prezentacja: [slides.com](http://slides.com/pawellukasik/microsoft-cognitive-services-17)
 * Wideo: wkrótce
