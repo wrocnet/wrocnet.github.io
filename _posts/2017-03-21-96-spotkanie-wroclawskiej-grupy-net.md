@@ -5,8 +5,8 @@ meetupno: 96
 ---
 
 #### .NET Core w 2017 - [Łukasz Pyrzyk](https://pyrzyk.net/)
-* Prezentacja: wkrótce
-* Wideo: wkrótce
+* Prezentacja: [pptx](/assets/NET-Core-2017.pptx)
+* Wideo: {% include youtube.md video_id='wa-JyqRkla4' %}
 
 #### Jak zacząć swoją przygodę z Unity3D - [Piotr Wandycz](http://piotr-wandycz.pl/)
 * Prezentacja: [pdf](/assets/unity3d_wandycz.pdf)
