@@ -11,4 +11,4 @@ meetupno: 96
 #### Jak zacząć swoją przygodę z Unity3D - [Piotr Wandycz](http://piotr-wandycz.pl/)
 * Prezentacja: [pdf](/assets/unity3d_wandycz.pdf)
 * Przykładowy kod: [GitHub](https://github.com/PiotrWandycz/Unity3D_Wrocnet)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='Kcq2afmqZ7c' %}
