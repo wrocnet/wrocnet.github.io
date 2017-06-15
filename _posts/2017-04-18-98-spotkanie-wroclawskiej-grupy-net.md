@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 98. spotkanie - Azure Simple Storage, Elm
+title: 98. spotkanie - Open Source, Kinect
 meetupno: 98
 ---
 
