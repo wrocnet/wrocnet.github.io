@@ -4,7 +4,7 @@ title: 99. spotkanie - Azure Simple Storage, Elm
 meetupno: 99
 ---
 
-#### Keep Its Storage SImple Stupid - [Szymon Kulec](https://twitter.com/skooletz)
+#### Keep Its Storage Simple Stupid - [Szymon Kulec](https://twitter.com/skooletz)
 * Prezentacja: wkrótce
 * Wideo: {% include youtube.md video_id='xWkcwLvmBBg' %}
 
