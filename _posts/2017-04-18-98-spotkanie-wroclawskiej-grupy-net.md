@@ -10,4 +10,4 @@ meetupno: 98
 
 #### Ty jesteś kontrolerem - [Damian Jarosch](https://twitter.com/flatplanet.pl)
 * Prezentacja: wkrótce
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='EqBtUxVCTiI' %}
