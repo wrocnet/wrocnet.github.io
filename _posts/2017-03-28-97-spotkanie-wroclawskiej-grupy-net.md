@@ -10,4 +10,4 @@ meetupno: 97
 
 #### Microsoft Cognitive API "Put intelligence APIs to work" - [Paweł Łukasik](https://twitter.com/pawel_lukasik)
 * Prezentacja: [slides.com](http://slides.com/pawellukasik/microsoft-cognitive-services-17)
-* Wideo: wkrótce
+* Wideo: {% include youtube-playlist.md playlist_id='PL8bwawVZNV0z2MS6Z13nAV5g3qLwhHxE8' %}
