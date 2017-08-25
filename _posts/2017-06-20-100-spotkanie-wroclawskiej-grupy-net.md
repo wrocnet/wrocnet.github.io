@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 100. spotkanie - Azure Simple Storage, Elm
+title: 100. spotkanie - TPL Dataflow, Pamięć w .NET
 meetupno: 100
 ---
 
