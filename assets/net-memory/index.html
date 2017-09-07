@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+        ol > li > ol {
+            list-style-type: upper-roman !important;
+        }
+    </style>
+
+    <!-- / ZEDYTUJ odpowiednio tagi: TITLE,DESCRIPTION,AUTHOR -->
+    <title>Pamięć w .NET | PGS Software</title>
+    <meta name="description" content="Pamięć w .NET">
+    <meta name="author" content="Grzegorz Siemoniak">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/pgs.css">
+</head>
+
+<body class="light-code">
+    <!--
+
+        usuń klasę jeśli chcesz ciemne style (zenburn) dla 'code snippets'
+        http://www.c-sharpcorner.com/article/C-Sharp-heaping-vs-stacking-in-net-part-iv/
+
+        -->
+
+    <div class="reveal">
+
+        <!-- TUTAJ ZACZYNA SIĘ PREZENTACJA - wklej poniżej swoje slajdy -->
+        <div class="slides">
+            <section data-state="logo" data-page="0" class="center">
+                <h2>Pamięć w .NET</h2>
+                <h4>czyli nie po to kodzę w C# by się tym przejmować</h4>
+                <br />
+                <p>
+                    <small>Przejmuje się tym <a href="mailto:gsiemoniak@pgs-soft.com">Grzesiek Siemoniak</a></small>
+                </p>
+            </section>
+
+            <section data-page="0" class="center">
+                <p>
+                    <h4>Grzesiek Siemoniak</h4>
+                    programista .NET  w <span style="color: #ff7726;">PGS Software</span>                   
+                </p>
+            </section>
+
+            <section data-page="0" class="center">
+                <p>
+                    <img src="images/giphy_spd_s.gif" />
+                </p>
+            </section>
+        
+            <section data-page="0">
+                <h2>Agenda</h2>
+                <p>
+                    <ol>
+                        <li>
+                            Technikalia
+                            <ol class="ordered">
+                                <li>Stack</li>
+                                <li>Small Object Heap i Large Object Heap</li>
+                                <li>Dispose i Finalizer</li>
+                            </ol>
+                        </li>
+                        <li>
+                            Garbage Collector
+                            <ol class="ordered">
+                                <li>Jak działa?</li>                                
+                                <li>Kiedy ruszy?</li>                                
+                                <li>Alokacje bez GC?</li>
+                            </ol>
+                        </li>
+                        <li>Podsumowanie</li>
+                    </ol>
+                </p>
+            </section>
+
+            <section data-page="0">              
+                <h2>Impuls</h2>
+                <div style="position: relative;">
+                    <div style="z-index: 1;">
+                        
+                    </div>
+                    <div style="position: absolute; z-index: 9999; top: 10%; margin: 0 auto; height: 318px; width: 758px; left: 0; right: 0;">
+                        <img src="images/problematyczny_kod.png" />
+                    </div>
+                </div>
+            </section>
+
+            <section data-page="1">
+                <section data-page="1" class="center">
+                    <h2>1. Technikalia</h2>
+                </section>
+
+                <section data-page="1">
+                    <h2>Pamięć w .NET</h2>
+
+                    <ul>
+                        <li>
+                            Kilka stert
+                            <ul style="font-size: 75%;">
+                                <li class="fragment">
+                                    process heap
+                                </li>
+                                <li class="fragment">
+                                    small object heap (SOH)
+                                    <!--<ul style="font-size: 65%;">
+                                        <li>gen 0 heap</li>
+                                        <li>gen 1 heap</li>
+                                        <li>gen 2 heap</li>
+                                    </ul>-->
+                                </li>
+                                <li class="fragment">
+                                    large object heap (LOH)
+                                </li>
+                                <li class="fragment">
+                                    loader heap
+                                    <ul style="font-size: 65%;">
+                                        <li>high frequency heap</li>
+                                        <li>low frequency heap</li>
+                                        <li>stub heap</li>
+                                    </ul>
+                                </li>
+                                <li class="fragment">
+                                    code heap
+                                    <ul style="font-size: 65%;">
+                                        <li>Execution Engine</li>
+                                        <li>JiT</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="fragment">
+                            czyszczona automatycznie przez Garbage Collector
+                            <ul style="font-size: 65%;">
+                                <li>small object heap</li>
+                                <li>large object heap</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <aside class="notes">
+                        1. Small object heap i large object heap
+                        <br />
+                        2. Loader heap - tutaj między innymi trafiają wartości stałe oraz statyczne, poza GC
+                        <br />
+                        3. process heap - pamięc niezarządzalna, natywna
+                        code heap - pamięc wykrozystywana przez Execution Engine i JIT
+                        <br />
+                        4. (Nie mam bezpośredniego dostępu do pamięci fizycznej)
+                        <!--Loader Heap: contains CLR structures and the type system
+                        High Frequency Heap: statics, MethodTables, FieldDescs, interface map
+                        Low Frequency Heap: EEClass, ClassLoader and lookup tables
+                        Stub Heap: stubs for CAS, COM wrappers, PInvoke
+                        Large Object Heap: memory allocations that require more than 85k bytes
+                        GC Heap: user allocated heap memory private to the app
+                        JIT Code Heap: memory allocated by mscoreee (Execution Engine) and the JIT compiler for managed code
+                        Process/Base Heap: interop/unmanaged allocations, native memory, etc
+                        https://vivekcek.wordpress.com/tag/high-frequency-heap/
+                        -->
+                    </aside>
+                </section>
+
+
+                <section data-page="1">
+                    <h2>Stack (stos)</h2>
+                    <ul>
+                        <li>
+                            jeden stos per wątek
+                        </li>
+                        <li>
+                            miejsce na zmienne lokalne oraz argumenty funkcji
+                        </li>
+                        <li>
+                            wywołanie metody tworzy kontener (tzw. stack frame)
+                        </li>
+                        <li>
+                            gdy metoda kończy się, kontener jest usuwany
+                        </li>
+                    </ul>
+
+                    <aside class="notes">
+                        1. Stos = stan aplikacji
+                        <br />
+                        2. metoda = stack frame
+                        <br />
+                        3. Zakończenie metody usuwa frame i stan wraca do poprzedniej metody
+                        <br />
+                        4. Wątek końćzy się gdy nie ma więcej framów.
+                    </aside>
+                </section>
+
+                <section data-page="1">
+                    <h2>Stack (stos)</h2>
+                    <p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td valign="middle" style="vertical-align: middle;"><img src="images/stos_przyklad_kod.png"></td>
+                                    <td><img src="images/stos_przyklad_frame.png"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </p>
+                </section>
+
+                <section data-page="1">
+                    <h2>Value Type</h2>
+
+                    <p>
+                        <ul>
+                            <li>byte, int, long, char, itd.</li>
+                            <li>struct</li>
+                            <li>IntPtr</li>
+                        </ul>
+                                            <br />
+                        <br />
+                        <h4 class="fragment">Warto wiedzieć</h4>
+                        <p class="fragment">zmienne statyczne są zawsze umieszczane na stercie, niezależnie od typu</p>
+                    </p>
+
+                    <aside class="notes">
+                        1. Zmienne żyją tam gdzie zostały zadeklarowane. Wewnątrz metody, wtedy na stosie, w klasie to na stercie.
+                        <br />
+                        2. Przekazywane jako kopie (kopia wskaźnika). Można użyć słowa kluczowego ref, przkekazujemy referencję
+                        <br />
+                        3. strukty nie powinny przekraczać 16 bytes (kopiowanie kosztowne)
+                        <br />
+                        4. http://www.developerfusion.com/article/4705/memory-in-net-what-goes-where/2/
+                    </aside>
+                </section>
+
+                <section data-page="1">
+                    <h2>Small Object Heap</h2>
+
+                    <ul>
+                        <li>
+                            obiekty zawsze umieszczone jeden po drugim
+                        </li>
+                        <li>
+                            Next Object Pointer wskazuje na miejsce następnej alokacji
+                        </li>
+                        <li>
+                            nowy obiekt trafi zawsze na koniec sterty
+                        </li>
+                        <li>
+                            dotychczasowy adres lokalizacji obiektu może ulec zmianie<span class="fragment">, chyba że został przypięty</span>
+                        </li>
+                    </ul>
+
+                    <aside class="notes">
+                        1. najwięcej alokacji odbywa się tutaj
+                        <br />
+                        2. alokacje są szybkie (nie trzeba szukać wolnego miejsca i wiadomo gdzie go umieścić)
+                        <br />
+                        3. obiekty są przenoszone by nie było wolnych miejsc między nimi
+                        <br />
+                        4. Przypięcie: fixed (int* a = &person.age), GCHandle.AddrOfPinnedObject(); = fragmentacja
+                        <br />
+                        5. Pinning an object prevents it from being moved by the garbage collector. In the generational model, it prevents promotion of pinned objects between generations. This is especially significant in the younger generations, such as generation 0, because the size of generation 0 is very small. Pinned objects that cause fragmentation within generation 0 have the potential of causing more harm than it might appear from examining pinned before we introduced generations into the the picture. Fortunatly, the CLR has the ability to promote pinned objects using the following trick: if generation 0 becomes severely fragmented with pinned objects, the CLR can declare the entire space of generation 0 to be considered a higher generation and allocate new objects from a new region of memory that will become generation 0. This is achieved by changing the ephemeral segment.
+                    </aside>
+                </section>
+
+                <section data-page="1">
+                    <h2>Boxing i unboxing</h2>
+                    <p>
+                        <ul>
+                            <li>boxing - ze stosu na stertę, kosztowne, obciąża GC</li>
+                            <li>unboxing - ze sterty na stos, o wiele tańsze</li>
+                        </ul>
+
+                        <br />
+                        <br />
+                        <h4 class="fragment">Warto wiedzieć</h4>
+                        <ul class="fragment">
+                            <li>konwersja z value type na interfejs skutkuje boxingiem</li>
+                            <li>zmienna może być boxowana kilkukrotnie</li>
+                        </ul>
+                    </p>
+
+                    <aside class="notes">
+                        1. zmienna ze stosu na stertę i vice versa
+                        <br />
+                        2. boxing = pamięc do zwolnienia przez GC
+                        <br />
+                        3. struct na interfejs = boxing
+                        <br />
+                        4. jedna zmienna może być boxowana kilka razy (string.format("", 1, 1, 1))
+                    </aside>
+                </section>
+
+                <section data-page="1">
+                    <h2>Large object heap</h2>
+
+                    <ul>
+                        <li>obiekty o rozmiarze 85kB i większe</li>
+                        <li class="fragment">
+                            istnieje wyjątek
+                            <ul class="fragment">
+                                <li>tablic double &#8805; 1000 elementów</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">do śledzenia wolnej pamięci służy Free Space Table</li>
+                        <li class="fragment">
+                            fragmentowana - po jakimś czasie zawsze będą niezapełnialne "dziury"<span class="fragment">, ale można to zmienić wywołując <code>GCSettings.LargeObjectHeapCompactionMode = GCLargeObjectHeapCompactionMode.CompactOnce</code></span>
+                        </li>
+                        <!--<li class="fragment">.NET 4.6.2 poprawia efektywność wykorzystania "dziur" w LOHu</li>                        -->
+                    </ul>
+
+                    <aside class="notes">
+                        1. zwolnenie pamięci tylko przy pełnej kolekcji (gen 2)
+                        <br />
+                        2. free space table trzyma informację o wolnych przestrzenaich między obiektami
+                        <br />
+                        3. obiekty żyją długo nawet gdy są nie potrzebne
+                        <br />
+                        4. fragmentacja bardzo kosztowna
+                        <br />
+                        5. zwolniona pamięć może nigdy nie zostać użyta ponownie
+                        <br />
+                        GCSettings.LargeObjectHeapCompactionMode = GCLargeObjectHeapCompactionMode.CompactOnce;
+                    </aside>
+
+                </section>
+
+                <section data-page="1">
+                    <h2>Dispose</h2>
+                    <ul>
+                        <li>zwalnia zasoby niezarządzalne</li>
+                        <li>deterministyczny - zwolnienie następuje w czasie wywołania</li>
+                    </ul>
+
+                    <aside class="notes">
+                        1. jeśli zasób implementuje dispose to powinien być na końcu wywołany
+                        <br />
+                        2. zwolnienie następuje w czasie wywołania
+                    </aside>
+
+                </section>
+
+                <section data-page="1">
+                    <h2>Finalizer</h2>
+                    <ul>
+                        <li>przydatny tylko do zwolnienia niezarządzalnej pamięci</li>
+                        <li>dodatkowo obciąża Garbage Collectora</li>
+                        <li>jeśli wystąpi w nim błąd, to cały proces zostanie zakończony</li>
+                    </ul>
+
+                    <aside class="notes">
+                        1. użyteczny w wyjątkowych sytuacjach (WaitEventHandle)
+                        <br />
+                        2. kosztowny
+                        <br />
+                        3. z Dispose GC.SupressFinalize()
+                        <br />
+                        4. przydatny w debugowaniu
+                    </aside>
+
+                </section>
+
+                <section data-page="1">
+                    <h2>Część 1 podsumowanie</h2>
+                    <ul>
+                        <li>
+                            Stos - zmienne lokalne, krótko żyjące
+                        </li>
+                        <li>
+                            2 sterty:
+                            <ul>
+                                <li>
+                                    small object heap
+                                </li>
+                                <li>
+                                    large object heap
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            zasoby niezarządzalne - pamiętajmy o Dispose
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <section data-page="2">
+                <section data-page="2" class="center">
+                    <h2>2. Garbage Collector</h2>
+                </section>
+                <section data-page="2">
+                    <h2>Garbage Collector - co to</h2>
+
+                    <ul>
+                        <li>odpowiedzialny za usuwanie ze sterty obiektów niepotrzebnych</li>
+                        <li class="fragment">obiekty dzielone na generacje: gen 0, gen 1 i gen 2</li>
+                        <li class="fragment">generacja 0 sprawdzana najczęściej, generacja 2 najrzadziej</li>
+                        <li class="fragment">obiekty mogą żyć dłużej niż jest to potrzebne</li>
+                        <li class="fragment">LOH sprawdzany tylko podczas czyszczenia generacji 2</li>
+                        <li class="fragment">dwa tryby działania</li>
+                    </ul>
+
+                    <aside class="notes">
+                        1. odpowiada za zwolnienie pamięci (sam jest w stanie określić co jest już niepotrzebne)
+                        <br />
+                        2. zoptymalizowany
+                        <br />
+                        3. uruchomienie powoduje wstrzymanie aplikacji
+                        <br />
+                        4. możliwość skonfigurowania
+                    </aside>
+
+                </section>
+
+                <section data-page="2">
+                    <h2>GC - kiedy ruszy</h2>
+                    <p>
+                        <ul>
+                            <li>
+                                kiedy generacja osiągnie rozmiar:
+                                <ul>
+                                    <li>gen 0 dojdzie do +- 256KB</li>
+                                    <li>gen 1 dojdzie do +- 2MB</li>
+                                    <li>gen 2 dojdzie do +- 10MB</li>
+                                </ul>
+                            </li>
+                            <li>zostanie wywołane GC.Collect()</li>
+                            <li>system operacyjny wyśle powiadomienie o niskiej pamięci</li>
+                        </ul>
+                    </p>
+
+                    <aside class="notes">
+                        1. gen 0 obiekty nowe i żyjące krótko, gen 2 obiekty długowieczne
+                        <br />
+                        2. dopasowuje limity po pewnym czasie
+                        <br />
+                        3. gen 0 jest sprawdzana najczęściej (1:10:100)
+                        <br />
+                        4. sprawdzenie od gen 2 nazywa sie full collection
+                        <br />
+                        5. nie powinien być wywoływany samodzielnie
+                    </aside>
+                </section>
+
+                <section data-page="2">
+                    <h2>Jak działa GC</h2>
+                    <ul>
+                        <li>Mark - oznaczanie obiektów "żywych"</li>
+                        <li>Sweep - usunięcie obiektów już niepotrzebnych</li>
+                        <li>Compact - przesunięcie obiektów w SOH</li>
+                    </ul>
+                    
+                    <img class="fragment" src="images/gc_ms.gif" />
+
+                    <!--
+                    <ul>
+                        <li class="fragment">Workstation GC Mode</li>
+                        <!--<li class="fragment">Concurrent Workstation GC Mode</li>
+                        <li class="fragment">Server GC Mode</li>
+                    </ul>
+                    <h4 class="fragment">Latency</h4>
+                    <ul>
+                        <li class="fragment">Batch</li>
+                        <li class="fragment">LowLatency</li>
+                        <li class="fragment">Interactive</li>
+                    </ul>
+                    -->
+
+                    <aside class="notes">
+                        1. Workstation - największa responsywność UI, Server przepustowaść requestów
+                        <br />
+                        2. Works GC używa jedngo wątku (stara wersja bez wątku w tle) + możliwy wątek w tle
+                        <br />
+                        3. GC używa wszystkich wątków - tworzy SOH i LOH per procesor logiczny
+                        <br />
+                        4. Tryb by aplikacja była jak najbardziej responsywna
+                        <br />
+                        5. Batch - Tryb by pamięc była czyszczona często, LowLatency - minimum, Interactive
+                    </aside>
+                </section>
+
+                <section data-page="2">
+                    <h2>Sterowanie GC</h2>
+                    <h4>Latency</h4>
+                    <ul>
+                        <li>Batch</li>
+                        <li>LowLatency</li>
+                        <li>Interactive</li>
+                        <li>NoGCRegion</li>
+                        <li>SustainedLowLatency</li>
+                    </ul>
+
+                    <aside class="notes">
+                        1. GC.TryStartNoGCRegion(4096, true)
+                        <br />
+                        2. GC.EndNoGCRegion();
+                        <br />
+                        3. https://msdn.microsoft.com/pl-pl/library/system.runtime.gclatencymode(v=vs.110).aspx
+                    </aside>
+
+                </section>
+
+                <section data-page="2">
+                    <h2>No GC Region</h2>
+                    <pre><code data-trim contenteditable>
+try
+{
+    GC.TryStartNoGCRegion(TOTAL_SIZE, true);
+
+    --reszta kodu
+}   
+finally
+{
+    if (GCSettings.LatencyMode == GCLatencyMode.NoGCRegion) GC.EndNoGCRegion();
+}                    </code></pre>
+
+                    <aside class="notes">
+                        1. GC.TryStartNoGCRegion(4096, true)
+                        <br />
+                        2. GC.EndNoGCRegion();
+                        <br />
+                        3. https://msdn.microsoft.com/pl-pl/library/system.runtime.gclatencymode(v=vs.110).aspx
+                    </aside>
+
+                </section>
+
+                <!--
+                <section data-page="2">
+                    <h2>GC - przykład monitorowania</h2>
+                    <pre><code data-trim contenteditable>
+private void Monitor()
+{
+    GC.RegisterForFullGCNotification(10, 10);
+    Thread t = new Thread(new ThreadStart(CheckGCStatus));
+    t.Start();  
+                                                  
+    while (true)
+    {
+        // alokowanie pamięci
+    }
+    GC.CancelFullGCNotification();
+}
+</code></pre>
+
+                    <aside class="notes">
+                        RegisterForFullGCNotification (soh, loh) - wieksza liczba to szybciej zawiadomi
+                    </aside>
+                </section>
+                <section data-page="2">
+                    <h2>GC - przykład monitorowania</h2>
+                    <pre><code data-trim contenteditable>
+private void CheckGCStatus()
+{
+    GCNotificationStatus sa = GC.WaitForFullGCApproach();
+    if (sa == GCNotificationStatus.Succeeded)
+    {
+    }
+    GCNotificationStatus sc = GC.WaitForFullGCComplete();
+    if (sc == GCNotificationStatus.Succeeded)
+    {
+    }
+}
+</code></pre>
+
+                    <aside class="notes">
+                        RegisterForFullGCNotification (soh, loh) - wieksza liczba to szybciej zawiadomi
+                    </aside>
+                </section>
+-->
+
+                <section data-page="2">
+                    <h2>Część 2 podsumowanie</h2>
+                    <ul>
+                        <li>tylko GC może usunąć "śmieci" z pamięci zarządzalnej</li>
+                        <li>autonomiczny byt, który odgrywa ważna rolę w naszej aplikacji</li>
+                        <li>GC jest dobry w tym co robi, ale warto mu tę pracę ułatwić</li>
+                    </ul>
+                </section>
+
+            </section>
+
+            <section data-page="0">
+                <h2>Szczęśliwy koniec historii?</h2>
+                <div>                    
+                    <img src="images/problematyczny_kod_rozwiazanie.png" />
+                </div>
+            </section>
+
+            <section data-page="0">
+                <h2>Szczęśliwy koniec historii!</h2>
+                <div>
+                    Nie używajmy zmiennych statycznych tam, gdzie nie jest to potrzebne.
+                    <!--<img src="images/problematyczny_kod_rozwiazanie.png" />-->
+                </div>
+            </section>
+
+            <section data-page="3">
+                <h2>Podsumowanie całości</h2>
+                <ul>
+                    <!--<li>
+                        Technikalia
+                        <ul>
+                            <li>stos i sterty</li>
+                            <li>zwalnianie zasobów niezarządzalnych</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Garbage Collector
+                        <ul>
+                            <li>czyści pamięć</li>
+                            <li>może mieć negatywny wpływ na działanie naszej aplikacji</li>
+                        </ul>
+                    </li>-->
+                    <li>
+                        alokacje nie są kosztowne
+                    </li>
+                    <li>
+                        czy obiekt trafi na SOH, czy LOH ma znaczenie
+                    </li>
+                    <li>
+                        pamiętajmy o Dispose
+                    </li>
+                    <li>
+                        czyszczenie generacji 0 i 1 jest szybkie
+                    </li>
+                    <li>
+                        czyszczenie generacji 2 takie szybkie nie jest, więc nie przedłużajmy życia obiektu, jeśli nie jest to konieczne
+                    </li>
+                </ul>
+
+                <aside class="notes">
+                    Milo Minderbinder - i wszyscy mają udział w zyskach.
+                </aside>
+            </section>
+
+            <section data-page="0" class="center">
+                <h2>Dziękuję za uwagę</h2>
+            </section>
+            <!-- TUTAJ KOŃCZY SIĘ PREZENTACJA -->
+        </div>
+
+    </div>
+
+    <script src="js/pgs.js"></script>
+
+    <script>
+
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            history: true,
+            mouseWheel: true,
+            center: false,
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: 'js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'js/plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'js/plugin/zoom-js/zoom.js', async: true },
+                { src: 'js/plugin/notes/notes.js', async: true }
+            ]
+        });
+
+        // Callbacks
+        Reveal.addEventListener('ready', function (event) {
+            // Adding PGS "squares" and counter
+            $(".slide-background").append('<div id="slide-counter" class="squares"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div><div class="counter"><span class="c-h"></span>.<span class="c-v"></span></div>');
+
+            var page = Reveal.getIndices().h + 1;
+            var attPage = event.currentSlide.getAttribute('data-page');
+            if (attPage) {
+                page = attPage;
+            }
+
+            if (page === '0') {
+                $(".slide-background > .counter").hide();
+            } else {
+                $(".slide-background > .counter").show();
+            }
+
+            // Counter inceremnts
+            $('.c-h').text(page);
+            $('.c-v').text(Reveal.getIndices().v);
+        });
+
+        Reveal.addEventListener('slidechanged', function (event) {
+            var page = Reveal.getIndices().h + 1;
+            var attPage = event.currentSlide.getAttribute('data-page');
+            if (attPage) {
+                page = attPage;
+            }
+
+            if (page === '0') {
+                $(".slide-background > .counter").hide();
+            } else {
+                $(".slide-background > .counter").show();
+            }
+
+            // Counter inceremnts
+            $('.c-h').text(attPage);
+            $('.c-v').text(Reveal.getIndices().v);
+        });
+
+    </script>
+
+</body>
+</html>

@@ -9,5 +9,5 @@ meetupno: 100
 * Wideo: wkrótce
 
 #### Pamięć w .NET - czyli nie po to kodzę w C# by się tym przejmować - [Grzesiek Siemoniak](https://twitter.com/gzaxx)
-* Prezentacja: wkrótce
+* Prezentacja: [Reveal.js](/assets/net-memory/)
 * Wideo: wkrótce
