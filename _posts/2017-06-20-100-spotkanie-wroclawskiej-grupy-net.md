@@ -6,8 +6,8 @@ meetupno: 100
 
 #### How I stopped worrying and learned to love parallel processing - [Szymon Warda](https://twitter.com/maklipsa)
 * Prezentacja: [slajdy](https://github.com/maklipsa/donetconfpl_tpldataflow)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='wfrqdFdA_48' %}
 
 #### Pamięć w .NET - czyli nie po to kodzę w C# by się tym przejmować - [Grzesiek Siemoniak](https://twitter.com/gzaxx)
 * Prezentacja: [Reveal.js](/assets/net-memory/)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='S1Ob3tgy9as' %}
