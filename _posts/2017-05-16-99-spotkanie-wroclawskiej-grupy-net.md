@@ -9,5 +9,5 @@ meetupno: 99
 * Wideo: {% include youtube.md video_id='xWkcwLvmBBg' %}
 
 #### Elm - "no runtime exceptions technology" - [Łukasz Gąsior](https://twitter.com/lukaszgasior)
-* Prezentacja: wkrótce
+* Prezentacja: [pptx](/assets/Elm.pptx)
 * Wideo: {% include youtube.md video_id='ytDGphHICWk' %}
