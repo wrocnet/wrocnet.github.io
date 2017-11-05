@@ -6,7 +6,7 @@ meetupno: 98
 
 #### Moja niesamowita przygoda z Open Source - [Adam Sitnik](https://twitter.com/SitnikAdam)
 * Prezentacja: [pptx](/assets/OSS_Wroclaw.pptx)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='5IhRQlwrZhY' %}
 
 #### Ty jesteś kontrolerem - [Damian Jarosch](https://twitter.com/flatplanet.pl)
 * Prezentacja: [pptx](/assets/uController.pptx)
