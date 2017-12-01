@@ -6,7 +6,7 @@ meetupno: 101
 
 #### Continous Integration w duzej skali - Marcin Skrobiranda
 * Prezentacja: wkrótce
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='EcWfr2gS1C8' %}
 
 #### Eden: An F#, reactive, graph-based calculation engine framework for building UI Tools - [Artur Tadrała](https://twitter.com/atadrala)
 * Prezentacja: wkrótce
