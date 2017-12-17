@@ -10,4 +10,4 @@ meetupno: 103
 
 #### Skąd się biorą boty - [Jacek Kolonko](https://twitter.com/jkolonko)
 * Prezentacja: wkrótce
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='9ukZ408mFGY' %}
