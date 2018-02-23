@@ -10,4 +10,3 @@ meetupno: 101
 
 #### Eden: An F#, reactive, graph-based calculation engine framework for building UI Tools - [Artur Tadrała](https://twitter.com/atadrala)
 * Prezentacja: wkrótce
-* Wideo: wkrótce
