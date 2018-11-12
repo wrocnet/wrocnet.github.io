@@ -14,4 +14,4 @@ meetupno: 109
 
 #### .NET, Alexa and me - [Rafał Hryniewski](https://hryniewski.net/)
 * Prezentacja: [SlideShare](https://www.slideshare.net/RafaHryniewski/net-alexa-and-me)
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='7kb6Cmf5bTg' %}
