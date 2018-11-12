@@ -10,7 +10,7 @@ meetupno: 109
 
 #### Azure Search, czyli zaawansowana wyszukiwarka w kilku krokach - [Kacper Świsłocki](https://www.linkedin.com/in/kacper-świsłocki-a76510154/)
 * Prezentacja: wkrótce
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='2VeU3UnbEJk' %}
 
 #### .NET, Alexa and me - [Rafał Hryniewski](https://hryniewski.net/)
 * Prezentacja: [SlideShare](https://www.slideshare.net/RafaHryniewski/net-alexa-and-me)
