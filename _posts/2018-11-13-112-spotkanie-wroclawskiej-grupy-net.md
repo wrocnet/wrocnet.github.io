@@ -9,6 +9,6 @@ meetupno: 112
 * Wideo: wkrótce
 
 #### CI / CD – Co to? Po co? Jak? - [Jerzy Wickowski](https://jerzywickowski.pl)
-* Prezentacja: [PDF](/assets/walenciuk-cicd.pdf)
+* Prezentacja: [PDF](/assets/wickowski-cicd.pdf)
 * Materiały: https://jerzywickowski.pl/prelekcje/cicd-co-to-po-co-jak/
 * Wideo: wkrótce
