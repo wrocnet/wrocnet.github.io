@@ -1,6 +1,6 @@
 ---
 layout: meetup
-title: 112. spotkanie - C# Evolution, łączenie C++ i C#
+title: 112. spotkanie - Przemawianie, CI/CD
 meetupno: 112
 ---
 
