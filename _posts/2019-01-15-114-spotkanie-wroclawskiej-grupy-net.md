@@ -5,7 +5,7 @@ meetupno: 114
 ---
 
 #### Loosely coupled architecture - jak pozbyć się efektu domina - [Radosław Maziarka](https://radekmaziarka.pl/)
-* Prezentacja: [/assets/Loosely-Coupled-Architecture.pptx]
+* Prezentacja: [Loosely-Coupled-Architecture.pptx](/assets/Loosely-Coupled-Architecture.pptx)
 * Materiały: [https://radekmaziarka.pl/2019/01/15/loosely-coupled-architecture/](https://radekmaziarka.pl/2019/01/15/loosely-coupled-architecture/)
 * Wideo: {% include youtube.md video_id='1iB87A1W0SA' %}
 
