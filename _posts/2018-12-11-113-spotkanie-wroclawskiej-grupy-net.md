@@ -10,5 +10,5 @@ meetupno: 113
 
 #### Budowanie webAPI przy użyciu wzorca command handler - [Krzysztof Zawistowski](https://github.com/krzyzaw)
 * Prezentacja: wkrótce
-* Materiały: https://github.com/krzyzaw/Prezentacje/tree/master/CommandHandler
+* Materiały: [https://github.com/krzyzaw/Prezentacje/tree/master/CommandHandler](https://github.com/krzyzaw/Prezentacje/tree/master/CommandHandler)
 * Wideo: {% include youtube.md video_id='kXIxw9Dxa1s' %}
