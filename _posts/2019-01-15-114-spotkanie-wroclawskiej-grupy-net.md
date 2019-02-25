@@ -10,5 +10,5 @@ meetupno: 114
 * Wideo: {% include youtube.md video_id='1iB87A1W0SA' %}
 
 #### SpecFlow - testy BDD - [Melchior Kozar](https://github.com/melchiork)
-* Prezentacja: wkrótce
+* Prezentacja: [SpecFlow-intro-pl.pptx](/assets/SpecFlow-intro-pl.pptx)
 * Wideo: {% include youtube.md video_id='dsFOg6Psp6M' %}
