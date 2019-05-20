@@ -9,5 +9,4 @@ meetupno: 102
 * Wideo: {% include youtube.md video_id='lDnPDzaCpJ8' %}
 
 #### Mac dla programistów .NET - Michał Szafrański
-* Prezentacja: wkrótce
-* Wideo: wkrótce
+* Wideo: niestety brak
