@@ -9,5 +9,5 @@ meetupno: 120
 * Wideo: wkrótce
 
 #### Lambda.NET: AWS Lambda + .NET Core - [Michał Baryliński](https://www.linkedin.com/in/michał-baryliński-51639a2a)
-* Prezentacja: [PDF](/assets/Lambda.Net.pptx)
+* Prezentacja: [PDF](/assets/Lambda.NET.pptx)
 * Wideo: wkrótce
