@@ -5,7 +5,7 @@ meetupno: 120
 ---
 
 #### Czysty model domenowy: Domain-Driven Design taktycznie i praktycznie - [Kamil Grzybek](https://twitter.com/kamgrzybek)
-* Prezentacja: wkrótce
+* Prezentacja: [PPTX](/assets/CZYSTY-MODEL-DOMENOWY.pptx)
 * Wideo: wkrótce
 
 #### Lambda.NET: AWS Lambda + .NET Core - [Michał Baryliński](https://www.linkedin.com/in/michał-baryliński-51639a2a)
