@@ -14,4 +14,4 @@ meetupno: 121
 
 #### Wprowadzenie do aplikacji multi-tenant w Azure - [Kacper Świsłocki](https://twitter.com/kacperswislocki)
 * Prezentacja: wkrótce
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='pUSoP0LJuiM' %}
