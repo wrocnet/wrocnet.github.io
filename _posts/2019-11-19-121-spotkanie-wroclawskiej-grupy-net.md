@@ -10,7 +10,7 @@ meetupno: 121
 
 #### C# + AzureSphere = ??? - Bartosz Szczepański
 * Prezentacja: wkrótce
-* Wideo: wkrótce
+* Wideo: {% include youtube.md video_id='0pTm2BzeqAk' %}
 
 #### Wprowadzenie do aplikacji multi-tenant w Azure - [Kacper Świsłocki](https://twitter.com/kacperswislocki)
 * Prezentacja: wkrótce
