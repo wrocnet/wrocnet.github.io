@@ -10,4 +10,4 @@ meetupno: 122
 
 #### Polly - how to write resilient code in .NET - [Rustam Ashurov](https://www.linkedin.com/in/rustam-ashurov-87a307126)
 * Prezentacja: wkrótce
-* Wideo: {% include youtube.md video_id='xxx' %}
+* Wideo: {% include youtube.md video_id='k9i52wvvSqM' %}
