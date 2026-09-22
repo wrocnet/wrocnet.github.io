@@ -8,6 +8,6 @@ meetupno: 73
 * Materiały: [Slajdy i przykłady](http://1drv.ms/1vqPB1l)
 * Wideo: {% include youtube.md video_id='VmEVmSZPfmk' %}
 
-#### ASP.NET vNext - [Michał Franc](https://twitter.com/lukaszgasior)
+#### ASP.NET vNext - [Łukasz Gąsior](https://twitter.com/lukaszgasior)
 * Prezentacja: [Slajdy](https://onedrive.live.com/view.aspx?resid=938428B91D7477CE!1271)
 * Wideo: {% include youtube.md video_id='6GbJkfoeeNI' %}
